@@ -210,6 +210,15 @@ Page({
 
   onShareAppMessage: function () {
     return getApp().share({title:'',desc:'',path:''});
-  }
+  },
 
+  //打开分类页
+  toCategory: function (event) {
+    var catid = event.currentTarget.dataset.catid;
+    app.globalData.catid = catid;//设置全局变量(app已经定义 var app=getApp())
+    console.log(catid);
+    wx.switchTab({
+      url: '../categories/categories'
+    });
+  },
 })

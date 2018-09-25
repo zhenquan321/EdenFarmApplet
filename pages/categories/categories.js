@@ -1,3 +1,5 @@
+var app = getApp(),
+  wxRequest = app.requirejs('wxRequest');
 var util = require('../../utils/tools.js');
 import icons from '../../utils/icons.js';
 //var _function = require('../../utils/functionData');
@@ -86,9 +88,9 @@ Page({
   //  this.getMap();
     this.goodsCate();
     this.nc_goodsCate();
-    // 页面初始化 options为页面跳转所带来的参数
-
-    
+    // 获取分类id
+    var cate_id = app.globalData.catid;
+    console.log(cate_id);
   },
 
   //获取地区

@@ -27,7 +27,7 @@
     </navigator>
   </view>
 </view>
-<navigator class="list-item flex-row" openType="navigate" url="/pages/goods/detail/detail?goods_id={{item.goods_id}}&image={{item.image_url}}" wx:for="{{newgoods}}">
+<navigator class="list-item flex-row" openType="navigate" url="/pages/goods/detail/detail?goods_id={{item.goods_id}}&image={{item.image_url}}" wx:for="{{newgoods}}" wx:for-index="idx" wx:if="{{idx<4}}">
   <view class="flex-grow-0 corver-pic">
     <image lazyLoad="true" src="{{item.image_url}}"></image>
   </view>
@@ -57,7 +57,7 @@
         ¥ {{item.market_price}}
       </view>
       <view class="flex-grow-0 group-btn flex-x-center flex-y-center">
-       <i class="iconfont">&#xe641;</i>  去购买
+        去购买
       </view>
     </view>
   </view>
@@ -71,14 +71,14 @@
         <text>{{cat.cate_name}}</text>
       </view>
       <view class="title-line"></view>
-      <navigator bindtap="hideGetCoupon" class="flex-y-center" openType="switchTab" url="/pages/categories/categories?cat_id={{cat.id}}">
+      <navigator bindtap="toCategory" data-catid="{{cat.cate_id}}" class="flex-y-center"  openType="reLaunch" url="/pages/categories/categories">
         <text>更多</text>
         <image src="/static/images/icon-jiantou-r.png"></image>
       </navigator>
     </view>
     <view class="goods-list flex-row goods-list-cols-3">
-      <view class="flex-grow-0" wx:for="{{cat.goods}}" wx:for-index="goods_index" wx:for-item="goods">
-        <navigator class="goods-item" url="/pages/goods/detail/detail?goods_id={{goods.goods_id}}&image={{goods.image_url}}">
+      <view class="flex-grow-0" wx:for="{{cat.goods}}"  wx:for-index="goods_index" wx:for-item="goods">
+        <navigator wx:if="{{goods_index<4}}" class="goods-item" url="/pages/goods/detail/detail?goods_id={{goods.goods_id}}&image={{goods.image_url}}">
           <image mode="aspectFill" src="{{goods.image_url}}"></image>
           <text class="text-more-2 {{cat_goods_cols==3?'fs-sm':''}}" style="padding:0 20rpx;height:2.8em;line-height:1.4;">{{goods.goods_name}}</text>
           <text class="goods-price">￥{{goods.market_price}}</text>
