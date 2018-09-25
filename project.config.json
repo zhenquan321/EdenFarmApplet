@@ -10,7 +10,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.2.2",
 	"appid": "wx388b6e481a0258c3",
-	"projectname": "%E4%BC%8A%E7%94%B8%E5%86%9C%E5%9C%BA",
+	"projectname": "EdenFarmApplet",
 	"isGameTourist": false,
 	"condition": {
 		"search": {
