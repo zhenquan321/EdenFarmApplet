@@ -1,0 +1,65 @@
+/* pages/calendar/calendar.wxss */
+
+.top-handle {
+  height: 80rpx;
+}
+
+.scroll-days{ position: fixed; left: 0; top: 92rpx; right: 0; bottom: 0;}
+
+.prev {
+  text-align: right;
+  height: 80rpx;
+}
+
+.next {
+  height: 80rpx;
+}
+
+.clearfix { display:block; zoom:1; }
+.clearfix::after { content:"."; display:block; height:0; clear:both; visibility:hidden; font-size:0; }
+
+.prev-handle {
+  width: 80rpx;
+  height: 100%;
+}
+
+.next-handle {
+  width: 80rpx;
+  height: 100%;
+}
+
+.date-area {width:100%; line-height:100rpx; font-size:36rpx;}
+
+.gridXt::before,.gridXb::before{ height: 1px; right: 0; left: 0; -webkit-transform: scale(1,0.5); transform: scale(1,0.5);}
+.gridXt::before{ top: 0; -webkit-transform-origin: top center;transform-origin: top center;}
+
+.weeks {
+  height: 92rpx; position: relative; z-index: 1;
+  line-height: 92rpx; padding: 0 4%;
+  background: #fff;
+  box-shadow: 0 0 18rpx rgba(0, 0, 0, 0.1);
+}
+
+.week {
+  text-align: center;
+}
+
+.grid {
+  width: 14.28571428571429%; position: relative; padding-bottom:14.28571428571429%;
+  float: left; margin-bottom: 10rpx;
+}
+
+.days{ padding:1% 4% 2%; background:rgba(255, 255, 255, 0.6);}
+
+.day {
+   position: absolute; left:0; top:0; width: 100%; height: 100%; justify-content: center; align-items: center; display: -webkit-flex; text-align: center;
+}
+
+.first-day,.last-day{ color: #fff; line-height: 100%;}
+.first-day{ border-radius: 12rpx 0 0 12rpx;}
+.first-day .time-day::after,.last-day .time-day::after{ content: "入住"; font-size:22rpx;  left: 0; top: 0; display:block; font-weight:20rpx; color: #fff;}
+.last-day{ border-radius: 0 12rpx 12rpx 0;}
+.last-day .time-day::after{ content: "离店";}
+
+
+@import "/static/css/DgHotel/DgHotel-template-default.wxss";

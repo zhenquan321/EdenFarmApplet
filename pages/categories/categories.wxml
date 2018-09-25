@@ -1,0 +1,120 @@
+<wxc-loading is-show="{{isshow}}" image="{{icons.loading_back}}" slip="{{icons.loading}}">
+</wxc-loading>
+
+<view id="channelSlider" class="ch-container div">
+
+  <scroll-view class="ch-content recommend_scroll_x_box" scroll-x="true" scroll-left="{{nav_scroll_left}}">
+    <block wx:key="item" wx:for="{{cates}}">
+      <view class="ch-tab-item li" wx:if="{{item.cate_name!='会员卡'&&item.cate_name!='每季新菜'}}">
+        <view class="{{current_index == index ?  'cur-ch-tab' : 'ch-tab'}} span" data-index="{{index}}" data-cate_id="{{item.cate_id}}" bindtap="channelRendered">{{item.cate_name}}</view>
+      </view>
+    </block>
+  </scroll-view>
+</view>
+
+<view class="listsidebar" otop="49.999996185302734" style="position: fixed; top: 120rpx;" hidden='{{show_menu}}'>
+  <view class="menu-list">
+    <block wx:for="{{nc_cates}}" wx:for-index="idx" wx:key="id">
+      <view class="menu-li {{idx==cate_id ? 'active': ''}}" bindtap='tapleftmenu' id="{{idx}}" data-cate_id="{{item.cate_id}}">
+        <a href="#">{{item.cate_name}}</a>
+      </view>
+    </block>
+  </view>
+</view>
+
+<view class="prolist" style='padding-left:{{item}}rpx'>
+  <view class="date-select flex" bindtap="calendarChoose" hidden='{{show_calendar}}'>
+    <view class="stay-start gridYr sub">
+      <view class="grey">
+        入住
+      </view>
+      <view class="stay-time green">
+        {{checkintime}}
+      </view>
+    </view>
+    <view class="stay-end sub">
+      <view class="grey">
+        离店
+      </view>
+      <view class="stay-time green">
+        {{leavetime}}
+      </view>
+    </view>
+    <view class="stay-date gridFourCirle grey">
+      共 {{daysNum}} 晚
+    </view>
+  </view>
+
+  <block wx:key="item" wx:for="{{goods}}" wx:for-index="index">
+
+    <view class="list-item">
+      <view bindtap="{{item.cate_id==2?'gotoOrder':'gotoDetail'}}" id="{{item.goods_id}}" data-url="{{item.image_url}}">
+
+        <view class="goodsPic">
+          <image src="{{item.image_url}}" />
+        </view>
+
+        <view class="goodsInfor">
+          <view class="item-title">
+            <text>{{item.goods_name}}</text>
+          </view>
+          <view class="item-price">
+            <text wx:if="{{item.group_price!=0}}">￥ {{item.group_price}}</text>
+            <text wx:else>￥ {{item.market_price}}</text>
+          </view>
+
+        </view>
+
+      </view>
+      <block wx:if="{{item.cate_id==2}}">
+        <view class="order" bindtap='gotoOrder' id="{{item.goods_id}}" data-url="{{item.image_url}}" data-index="{{index}}">预定</view>
+
+      </block>
+      <block wx:else>
+        <view class="addToCart" bindtap='toAddShopCar' data-index="{{index}}">+</view>
+      </block>
+    </view>
+  </block>
+</view>
+<view class="show-popup" hidden="{{hideShopPopup}}">
+  <view class="popup-mask" bindtap="closePopupTap"></view>
+  <view class="popup-contents">
+    <view class="pop-goods-info">
+      <view class="pop-img-box">
+        <image src="{{image}}" class="goods-thumbnail" />
+      </view>
+      <view class="pop-goods-des">
+        <view class="pop-goods-title">{{name}}</view>
+        <view class="pop-goods-price">¥ {{selectSizePrice}}</view>
+      </view>
+      <view class="pop-goods-close" bindtap="closePopupTap"></view>
+    </view>
+    <view class="size-label-box">
+      <block wx:for="{{goodsDetail.properties}}" wx:for-item="property" wx:for-index="idx" wx:key="id">
+        <view class="label">{{property.name}}</view>
+        <view class="label-item-box">
+          <view class="label-item {{item.active ? 'active' : '' }}" wx:for="{{property.childsCurGoods}}" wx:key="id" bindtap="labelItemTap" data-propertyindex="{{idx}}" data-propertyid="{{property.id}}" data-propertyname="{{property.name}}" data-propertychildindex="{{index}}"
+            data-propertychildid="{{item.id}}" data-propertychildname="{{item.name}}">
+            {{item.name}}
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="buy-num-box">
+      <view class="num-label">购买数量</view>
+      <view class="num-box">
+        <view class="num-jian {{buyNumber == buyNumMin ? 'hui': ''}}" bindtap="numJianTap">-</view>
+        <view class="num-input">
+          <input type="number" value="{{buyNumber}}" disabled/>
+        </view>
+        <view class="num-jia {{buyNumber== buyNumMax ? 'hui': ''}}" bindtap="numJiaTap">+</view>
+      </view>
+    </view>
+    <view class="popup-join-btn" wx:if="{{thetype =='cart'}}" bindtap="addShopCar">
+      加入购物车
+    </view>
+    <view class="popup-join-btn" wx:if="{{thetype =='buy'}}" bindtap="btnOrderDone">
+      立即购买
+    </view>
+  </view>
+</view>

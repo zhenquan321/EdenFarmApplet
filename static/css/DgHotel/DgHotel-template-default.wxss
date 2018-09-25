@@ -1,0 +1,13 @@
+/************ color **************/
+page .wx-swiper-dot{background: #fff;}
+
+.green,.mid-day,.tab-sub-active,.quyu-list.active,.place-list.active,.price-list.active{ color: #f35150;}
+page .wx-swiper-dot-active,.tab-sub-active::after,.comm-name-score,.res-txt,.yd-pay-active,button[type="primary"]{background: #f35150;}
+.first-day,.last-day,.price-list.active{background-color: #f35150;}
+button[type="primary"],button[type="primary"][disabled],button[type="primary"][loading]{background: #f56160;}
+
+.mid-day{ background: rgba(243, 81, 80, 0.2);}
+.tags-alls {background:rgba(243, 81, 80, 0.05);}
+.float-phone{background:rgba(243, 81, 80, 0.8);}
+
+.red{color: #f35150;}

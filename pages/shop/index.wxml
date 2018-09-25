@@ -1,0 +1,21 @@
+<view class="app">
+
+      <view class="title">
+          商家登录管理
+      </view>
+
+      <form>
+        
+        <view class="col">
+            <text>账号：</text>
+            <input type="text" bindinput="textinput"  placeholder="请输入账号" />
+        </view>
+        <view wx:if="{{mobileerr!=''}}" class="err">{{mobileerr}}</view>
+        <view class="col">
+            <text>密码：</text>
+            <input type="password"  bindinput="password" placeholder="请输入密码" />
+        </view>
+         <button bindtap="submit" class="btn">立刻登录</button>   
+      </form>  
+
+</view>

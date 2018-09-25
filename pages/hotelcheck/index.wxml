@@ -1,0 +1,84 @@
+
+<navigator url="../addresses/addresses?sell_type={{sell_type}}&goods_id={{goods_id}}&address_id={{address.address_id}}" hover-class="none">
+  <view class="address" style="{{address ? '' : 'display: none;'}}">
+    <view class="address_name_order">
+      <view class="span">{{address.address_name == "HOME" ? "家庭" : "公司"}}</view>
+      <!--ms-if-->
+    </view>
+    <view class="title">
+      <image src="{{icons.map}}"></image>
+    </view>
+    <view class="address-info">
+      <view class="address-user">
+        <text class="address-name">{{address.receive_name}}</text>
+        <text class="address-phone">{{address.mobile}} </text>
+      </view>
+      <view class="addressmap">
+        {{address.full_address}}
+      </view>
+    </view>
+
+  </view>
+
+  <view class="div address text_center" style="{{!address ? '' : 'display: none;'}}">
+    <view class="no_address">
+       <image src="../../images/map.png"></image><view class="strong">点击添加收获地址，才能完成订单。</view>
+    </view>
+  </view>
+</navigator>
+
+<view class="goods-list">
+  <view class="list-title">商品列表</view>
+  <block wx:for="{{carts}}" wx:key="{{index}}">
+    <view class="a-goods">
+      <view class="img-box">
+        <image src="{{item.image}}" class="img" />
+      </view>
+      <view class="text-box">
+        <view class="arow arow01">
+          <view class="goods-name">{{item.goods_name}}</view>
+          <view class="goods-price">¥ {{item.market_price}}</view>
+        </view>
+        <view class="arow">
+          <view class="goods-label">{{item.label}}</view>
+          <view class="goods-num">x {{item.quantity}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+
+
+<view class="goods-info">
+  <view class="row-box" wx:if="{{amount_str > 0}}">
+    <view class="row-label">商品金额</view>
+    <view class="right-text">¥ {{amount_str}}</view>
+  </view>
+  <view class="row-box" wx:if="{{express_fee > 0}}">
+    <view class="row-label">运费</view>
+    <view class="right-text">+ ¥ {{express_fee}}</view>
+  </view>
+  <view class="row-box">
+    <view class="row-label">伊甸卡余额</view>
+    <view class="right-text"> ¥ {{balance}}</view>
+  </view>
+  <view class="row-box">
+    <view class="row-label">支付方式</view>
+    <view class="right-text">
+      <radio-group class="radio-group" bindchange="radioChange">
+        <label class="radio" wx:for="{{items}}">
+          <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+  </view>
+
+</view>
+
+
+<view class="jiesuan-box">
+  <view class="left-price">
+    <view class="total">合计：¥ {{needpay_str}}</view>
+  </view>
+  <button class="to-pay-btn" bindtap="btnOrderDone">提交订单</button>
+</view>

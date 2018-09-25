@@ -1,0 +1,37 @@
+<!--detail.wxml-->
+
+<view class="containers">
+
+  <view class="page-body">
+    <view class="page__bd">
+
+      <view class="thread_title-cell">
+        <view class="thread_data-title">{{article.title}}</view>
+      </view>
+
+      <view class="thread_content-cell">
+
+        <import src="../../../utils/wxParse/wxParse.wxml"/>
+        <template is="wxParse" data="{{wxParseData:thread_data.message.nodes}}"/>
+
+        <view>
+          <block wx:for="{{thread_data.image_list}}" wx:for-item="image" wx:key="imageId" >
+            <view>
+              <image class="thread_image" mode="widthFix" src="{{image}}" data-src="{{image}}" data-image_list="{{thread_data.image_list}}" bindtap="previewImage"></image>
+            </view>
+          </block>
+        </view>
+
+      </view>
+
+
+
+    </view>
+    
+  </view>
+  
+
+
+
+</view>
+

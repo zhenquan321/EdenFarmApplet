@@ -1,0 +1,19 @@
+<template name="modal">
+    <view class="div winpop-mask" id="co_maks" style="{{!hidden ? 'display: block;' : ''}}"></view>
+    <view class="div winpop-box" id="co_box" style="{{!hidden ? 'display: block;' : ''}}">
+        <view class="div co-popmain winpop-main">
+            <view class="p co-main-words">{{content}}</view>
+        </view>
+        <view class="div co-btns winpop-btns">
+           <button type="button" class="co-false pop-btn2 confirm-false" value="" bindtap="modalCancel">
+            取消
+            </button>
+
+            <button type="button" class="co-true  pop-btn2 confirm-true" value="" bindtap="modalConfirm"  data-callback = "{{success}}">
+            确定
+            </button>
+        </view>
+    </view>
+
+    <!--<modal title="{{title}}" cancel-text="取消" confirm-text="确定" hidden="{{hidden}}" bindconfirm="modalConfirm" bindcancel="modalCancel">确定删除这个地址吗？</modal>-->
+</template>

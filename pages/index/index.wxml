@@ -1,0 +1,93 @@
+<view class="index-banner" wx:if="{{banner&&banner.length>0}}">
+  <swiper autoplay="{{autoplay}}" circular="{{circular}}" class="index-adcs-sqiper index-banner-sqiper" duration="{{duration}}" indicatorDots="{{indicatorDots}}" interval="{{interval}}" style="{{bannerheight?'height:'+bannerheight+'px':'height:'+swiperheight+'px'}}">
+    <swiper-item wx:for="{{banner}}" wx:for-index="idx">
+      <navigator class="index-advs-navigator" openType="navigate" url="{{item.link}}">
+        <image bindload="imagesHeight" class="advimg" data-type="bannerheight" mode="widthFix" src="{{item.image_url}}"></image>
+      </navigator>
+    </swiper-item>
+  </swiper>
+</view>
+<view class="fui-icon-group col-4 noborder circle" wx:if="{{nav}}">
+  <navigator class="fui-icon-col" openType="navigate" url="{{item.url}}" wx:for="{{nav}}" wx:for-index="idx">
+    <view>
+      <image class="icon" src="{{item.icon}}"></image>
+    </view>
+    <view class="navs-navname">{{item.navname}}</view>
+  </navigator>
+</view>
+<view class="division"></view>
+<view style="background: #fff;width:100%;overflow-x: hidden;" wx:if="{{newgoods.length>0}}">
+  <view class="title-bar flex-y-center flex-x-center">
+    <view class="title flex-y-center">
+      <text>精品推荐</text>
+    </view>
+    <navigator class="flex-y-center" openType="switchTab" url="/pages/categories/categories?cat_id={{cat.id}}">
+      <text>更多</text>
+      <image src="/static//images/icon-jiantou-r.png"></image>
+    </navigator>
+  </view>
+</view>
+<navigator class="list-item flex-row" openType="navigate" url="/pages/goods/detail/detail?goods_id={{item.goods_id}}&image={{item.image_url}}" wx:for="{{newgoods}}">
+  <view class="flex-grow-0 corver-pic">
+    <image lazyLoad="true" src="{{item.image_url}}"></image>
+  </view>
+  <view class="flex-grow-1 flex-col">
+    <view class="flex-grow-1 goods-title">
+      {{item.goods_name}}
+    </view>
+    <view class="flex-grow-0 flex-row">
+      <view class="group-item" wx:if="{{item.groupList[0]}}">
+        <view wx:for="{{item.groupList}}" wx:for-item="group">
+          <image src="{{group.avatar_url}}"></image>
+        </view>
+      </view>
+      <view class="goods-sales">
+        已售{{item.sell_count}} 件
+      </view>
+    </view>
+    <view class="flex-grow-0 flex-row flex-y-bottom">
+      <view class="flex-grow-0 price flex-row flex-y-bottom">
+        <view class="unit flex-grow-0 flex-y-bottom">
+          ¥
+        </view>
+        <view class="flex-grow-1 flex-y-bottom" wx:if="{{item.group_price!=0}}">{{item.group_price}}</view>
+         <view class="flex-grow-1 flex-y-bottom" wx:if="{{item.group_price==0}}">{{item.market_price}}</view>
+      </view>
+      <view class="flex-grow-1 old-price flex-y-bottom">
+        ¥ {{item.market_price}}
+      </view>
+      <view class="flex-grow-0 group-btn flex-x-center flex-y-center">
+       <i class="iconfont">&#xe641;</i>  去购买
+      </view>
+    </view>
+  </view>
+</navigator>
+<view class="division"></view>
+<block wx:for="{{List}}" wx:for-index="cat_index" wx:for-item="cat">
+  <view style="background: #fff;margin-bottom: 10rpx;width:100%;overflow-x: hidden;" wx:if="{{cat.goods.length>0}}">
+    <view class="title-bar flex-y-center flex-x-center">
+      <view class="title-line"></view>
+      <view class="title flex-y-center">
+        <text>{{cat.cate_name}}</text>
+      </view>
+      <view class="title-line"></view>
+      <navigator bindtap="hideGetCoupon" class="flex-y-center" openType="switchTab" url="/pages/categories/categories?cat_id={{cat.id}}">
+        <text>更多</text>
+        <image src="/static/images/icon-jiantou-r.png"></image>
+      </navigator>
+    </view>
+    <view class="goods-list flex-row goods-list-cols-3">
+      <view class="flex-grow-0" wx:for="{{cat.goods}}" wx:for-index="goods_index" wx:for-item="goods">
+        <navigator class="goods-item" url="/pages/goods/detail/detail?goods_id={{goods.goods_id}}&image={{goods.image_url}}">
+          <image mode="aspectFill" src="{{goods.image_url}}"></image>
+          <text class="text-more-2 {{cat_goods_cols==3?'fs-sm':''}}" style="padding:0 20rpx;height:2.8em;line-height:1.4;">{{goods.goods_name}}</text>
+          <text class="goods-price">￥{{goods.market_price}}</text>
+          <view class="flex-row" style="padding:10rpx 20rpx" wx:if="{{cat_goods_cols==2}}">
+            <view class="flex-grow-1" style="color:#ff334b">￥{{goods.market_price}}</view>
+            <view class="fs-sm" style="color:#999;">已售{{goods.sales}}</view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</block>

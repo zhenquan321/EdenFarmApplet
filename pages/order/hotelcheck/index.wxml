@@ -1,0 +1,58 @@
+<view class="goods-list">
+  <view class="list-title">客房列表</view>
+    <view class="a-goods">
+      <view class="img-box">
+        <image src="{{url}}" class="img" />
+      </view>
+      <view class="text-box">
+        <view class="arow arow01">
+          <view class="goods-name">{{goods.goods_name}}</view>
+          <view class="goods-price">¥ {{goods.market_price}}</view>
+        </view>
+        <view class="arow">
+          <view class="goods-label">{{item.label}}</view>
+          <view class="goods-num">x {{quantity}}</view>
+        </view>
+      </view>
+    </view>
+</view>
+
+
+<view class="goods-info">
+  <view class="row-box" >
+    <view class="row-label">订单人</view>
+    <view class="right-text">{{userName}}</view>
+  </view>
+  <view class="row-box" >
+    <view class="row-label">手机号</view>
+    <view class="right-text">+{{phone}}</view>
+  </view>
+    <view class="row-box" >
+    <view class="row-label">天数</view>
+    <view class="right-text">{{daysNum}}晚</view>
+  </view>
+ <!-- <view class="row-box">
+    <view class="row-label">伊甸卡余额</view>
+    <view class="right-text"> ¥ {{balance}}</view>
+  </view>
+  -->
+  <view class="row-box">
+    <view class="row-label">支付方式</view>
+    <view class="right-text">
+      <radio-group class="radio-group" bindchange="radioChange">
+        <label class="radio" wx:for="{{items}}">
+          <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+  </view>
+
+</view>
+
+
+<view class="jiesuan-box">
+  <view class="left-price">
+    <view class="total">合计：¥ {{needpay_str}}</view>
+  </view>
+  <button class="to-pay-btn" bindtap="btnOrderDone">提交订单</button>
+</view>

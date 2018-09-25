@@ -1,0 +1,7 @@
+/************ color **************/
+.bgwhite{background: #fff;}
+.green{color: #f35150;}
+.wx-swiper-dot.wx-swiper-dot-active,.contact,button[type="primary"]{background: #f35150;}
+button[disabled][type="primary"]{background: #f14140;}
+.contact{box-shadow: 0 0 15px rgba(243, 81, 80, 0.8);}
+button[disabled][type="primary"]{background: rgba(243, 81, 80, 0.3);}

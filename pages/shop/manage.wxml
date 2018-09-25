@@ -1,0 +1,103 @@
+<view class="app">
+  <view class="header">
+    <view class="hd_main">
+      <view class="icon">
+        <navigator url="/pages/shop/store/order/index?type=1">
+          <view class="image">
+            <image src="/static/images/wait_order.png"></image>
+            <text wx:if="{{stayok != 0}}" class="tips ">{{stayok}}</text>
+          </view>
+          <view class="text_wait">待确定新订单</view>
+        </navigator>
+      </view>
+      <view class="icon">
+        <navigator url="/pages/hotel/store/order/index?type=2">
+          <view class="image">
+            <image src="/static/images/sh_order.png"></image>
+               <text wx:if="{{stayin != 0}}" class="tips ">{{stayin}}</text>
+          </view>
+          <view class="text_sh">待入住订单</view>
+        </navigator>
+      </view>
+      <view class="icon">
+        <navigator url="/pages/hotel/store/order/index?type=3">
+          <view class="image">
+            <image src="/static/images/qx_order.png"></image>
+           
+          </view>
+          <view class="text">取消订单</view>
+        </navigator>
+      </view>
+
+      <view class="icon">
+        <navigator url="/pages/hotel/store/order/money">
+          <view class="image">
+            <image src="/static/images/jiesuan.png"></image>
+          </view>
+          <view class="text">结算管理</view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+
+  <view class="action">
+
+    <view class="col">
+      <navigator url="/pages/shop/order/index">
+        <image class="tubiao" src="/static/images/order_on.png"></image>
+        <text>订单管理</text>
+        <image class="jiantou" src="/static/images/jiantou.png"></image>
+      </navigator>
+    </view>
+    <view class="col">
+      <navigator url="/pages/hotel/store/fang/room">
+      <image class="tubiao" src="/static/images/fangxing.png"></image>
+      <text>房间管理</text>
+      <image class="jiantou" src="/static/images/jiantou.png"></image>
+      </navigator>
+    </view>
+
+
+    <view class="col">
+      <navigator url="/pages/hotel/store/fang/price">
+      <image class="tubiao" src="/static/images/fangjia.png"></image>
+      <text>房价管理</text>
+      <image class="jiantou" src="/static/images/jiantou.png"></image>
+      </navigator>
+    </view>
+
+    <view class="col">
+        <navigator url="/pages/hotel/store/info/index">
+          <image class="tubiao" src="/static/images/jiesao.png"></image>
+          <text>资料管理</text>
+          <image class="jiantou" src="/img/hotel/jiantou.png"></image>
+        </navigator>
+    </view>
+
+    <view class="col">
+      <navigator url="/pages/hotel/store/comment/index">
+        <image class="tubiao" src="/static/images/dianping.png"></image>
+        <text>评价管理</text>
+        <image class="jiantou" src="/static/images/jiantou.png"></image>
+      </navigator>
+
+    </view>
+
+
+    <view bindtap="tel" class="col">
+      <image class="tubiao" src="/static/images/kefu.png"></image>
+      <text>联系客服</text>
+      <image class="jiantou" src="/static/images/jiantou.png"></image>
+    </view>
+  </view>
+
+  <view class="kongbai"></view>
+
+  <view class="qihuan">
+    <navigator url="pages/index/index">
+      <image src="/static/images/hotel/qh.png"></image>
+      <text>切换到个人中心</text>
+    </navigator>
+  </view>
+
+</view>

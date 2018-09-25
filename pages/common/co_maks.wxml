@@ -1,0 +1,18 @@
+<loading hidden="{{loaded}}" mask="true">加载中</loading>
+<view class="div winpop-mask" id="co_maks" style="{{error.result == 'fail' ? 'display: block;' : ''}}"></view>
+<view class="div winpop-box" id="co_box" style="{{error.result == 'fail' ? 'display: block;' : ''}}">
+  <view class="div co-popmain winpop-main">
+    <view class="p co-main-words">{{error.error_info}}</view>
+  </view>
+  <view class="div co-btns winpop-btns">
+
+    <navigator url="{{error.url ? error.url : '../personal/personal'}}" redirect hover-class="none">
+      <button type="button" class="co-alert pop-btn alert-button" value="">
+            确定
+            </button>
+    </navigator>
+  </view>
+</view>
+<!--</view>
+    <template name="msgItem">
+</template>-->

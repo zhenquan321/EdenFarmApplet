@@ -1,0 +1,7 @@
+{
+
+    "usingComponents": {
+      "wxc-cc": "../../../packages/@minui/wxc-cc/dist/index",
+      "wxc-loading": "../../../packages/@minui/wxc-loading/dist/index"
+    }
+}

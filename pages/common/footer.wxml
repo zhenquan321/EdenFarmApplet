@@ -1,0 +1,36 @@
+<include src="co_maks.wxml"/>
+<view class="footer">
+  <view class="nav">
+     <view class="ul">
+        
+      <view class="li">
+            <navigator class="nav-controller {{URL == 1 ? 'active' : ''}} a" url="../index/index"  redirect  hover-class="a-hover">
+              <view class="fb-home"></view>
+              农场首页
+            </navigator>
+        </view>
+
+        <view class="li">
+          <navigator class="nav-controller {{URL == 2 ? 'active' : ''}} a" url="../index2/index2" redirect hover-class="a-hover">
+            <view class="fb-group"></view>
+            农场商品
+          </navigator>
+        </view>
+
+        <view class="li">
+          <navigator class="nav-controller {{URL == 3 ? 'active' : ''}} a" url="../orders/orders" redirect hover-class="a-hover">
+            <view class="fb-list"></view>
+            我的订单
+          </navigator>
+        </view>
+        
+        <view class="li">
+         <navigator class="nav-controller {{URL == 4 ? 'active' : ''}} a" url="../personal/personal" redirect hover-class="a-hover">
+            <view class="fb-user"></view>
+            个人中心
+        </navigator>
+     </view>
+  </view>
+</view>
+</view>
+

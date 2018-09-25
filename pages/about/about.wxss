@@ -1,0 +1,16 @@
+.main{
+  padding:0rpx 20rpx;
+}
+.mhomebox02{ text-align:center;}
+.mhomebox02 .title{ text-align:center; background-image:url(images/x.png); background-position:bottom center; background-repeat:no-repeat; padding-bottom:10px; padding-top:10px;font-size:45rpx;}
+
+.p{margin:0; padding:0; line-height:160%; margin-bottom:10px; font-size:35rpx;}
+
+.a{
+ margin:15px 0; 
+ font-size: 45rpx;
+ color:#65a038;
+}
+.mchange image{
+  width: 100%;
+}

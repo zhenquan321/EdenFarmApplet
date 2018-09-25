@@ -1,0 +1,43 @@
+<import src="../../../templates/article-list.wxml" />
+<import src="../../../template/copyright.wxml" />
+
+<!-- 导航栏-->
+  <scroll-view class="navbar" scroll-x="true"  scroll-left="{{scrollNavbarLeft}}">
+    <view class="navbar-item {{ navbarArray[item].type }}" wx:key="{{ item}}" id="{{ item}}" data-cateid="{{navbarArray[item].cate_id}}"wx:for="{{ navbarShowIndexArray }}" catchtap="onTapNavbar" >
+       <view class="navbar-item-wrap" hidden='{{isshow}}'>{{ navbarArray[item].cate_name }}</view>
+    </view>
+  </scroll-view>
+
+    <scroll-view scroll-y  class="articles" style="height:{{windowHeight}}px"  bindtouchstart="onTouchstartArticles" bindtouchend="onTouchendArticles" hidden="{{ articlesHide }}" bindscrolltolower="loadMore">
+   <view class="fa-tools-list">
+
+    <block wx:key="id" wx:for="{{postsList}}">
+      <view class="fa-tools-item" bindtap='redictDetail' id="{{item.id}}">
+        <view class="tool-img">
+          <image src="{{item.image}}" mode='aspectFill'></image>
+        </view>
+        <view class="tool-tit">
+          <view class="title">
+          {{item.title}}
+          </view>
+          <view class="tool-det">
+          {{item.description}}
+          </view>
+        </view>
+
+        <view class="topic-meta">
+        </view>
+
+      </view>
+    </block>
+
+  </view>
+    <!--   <view class="loading" hidden="{{isloading}}">
+           <image src='../../images/load.gif'></image>
+           <text>正在加载...</text>
+       </view>
+       -->
+    </scroll-view>
+ 
+
+

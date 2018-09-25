@@ -1,0 +1,65 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/about/about",
+    "pages/addresses/addresses",
+    "pages/addresses/add/address",
+    "pages/article/index/index",
+    "pages/article/detail/index",
+    "pages/categories/categories",
+    "pages/goods/detail/detail",
+    "pages/cate/cate",
+    "pages/cart/index/index",
+    "pages/cart/cartinfo/index",
+    "pages/order/check/index",
+    "pages/order/buycheck/index",
+    "pages/order/index/index",
+    "pages/member/member",
+    "pages/hotel-calendar/calendar",
+    "pages/hotel-yuding/hotel-yuding",
+    "pages/order/hotelcheck/index",
+    "pages/logs/logs",
+    "pages/shop/index",
+    "pages/shop/manage",
+    "pages/shop/order/index",
+    "pages/shop/order/detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#60a411",
+    "navigationBarTitleText": "伊甸农场",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#2c2c2c",
+    "selectedColor": "#d81e06",
+    "backgroundColor": "#fafafa",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/images/icon_home.png",
+        "selectedIconPath": "static/images/icon_home_active.png"
+      },
+      {
+        "pagePath": "pages/categories/categories",
+        "text": "分类",
+        "iconPath": "static/images/icon_catalog.png",
+        "selectedIconPath": "static/images/icon_catalog_active.png"
+      },
+      {
+        "pagePath": "pages/cart/index/index",
+        "text": "购物车",
+        "iconPath": "static/images/icon_cart.png",
+        "selectedIconPath": "static/images/icon_cart_active.png"
+      },
+      {
+        "pagePath": "pages/member/member",
+        "text": "我的",
+        "iconPath": "static/images/icon_member.png",
+        "selectedIconPath": "static/images/icon_member_active.png"
+      }
+    ]
+  }
+}

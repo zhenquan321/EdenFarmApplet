@@ -1,0 +1,81 @@
+<wxc-loading is-show="{{isshow}}" image="{{icons.loading_back}}" slip="{{icons.loading}}">
+</wxc-loading>
+<view class="listsidebar" otop="49.999996185302734" style="position: static; top: 0px;" hidden='{{show_menu}}'>
+  <view class="menu-list">
+    <block wx:for="{{nc_cates}}">
+      <view class="menu-li">
+        <a href="#">{{item.cate_name}}</a>
+      </view>
+    </block>
+  </view>
+</view>
+
+
+<view class="prolist" style='padding-left:{{item}}rpx'>
+  <block wx:key="item" wx:for="{{goods}}" wx:for-index="index">
+
+    <view class="list-item">
+      <navigator url="../goods-details/index?goods_id={{item.goods_id}}&image={{item.image_url}}">
+        <view class="goodsPic">
+          <image src="{{item.image_url}}" />
+        </view>
+      </navigator>
+      <view class="goodsInfor">
+        <view class="item-title">
+          <text>{{item.goods_name}}</text>
+        </view>
+        <view class="item-price">
+          <text>￥ {{item.market_price}}</text>
+          <view class="addToCart" bindtap='toAddShopCar' data-index="{{index}}">+</view>
+        </view>
+
+      </view>
+
+    </view>
+
+
+
+  </block>
+</view>
+<view class="show-popup" hidden="{{hideShopPopup}}">
+  <view class="popup-mask" bindtap="closePopupTap"></view>
+  <view class="popup-contents">
+    <view class="pop-goods-info">
+      <view class="pop-img-box">
+        <image src="{{image}}" class="goods-thumbnail" />
+      </view>
+      <view class="pop-goods-des">
+        <view class="pop-goods-title">{{name}}</view>
+        <view class="pop-goods-price">¥ {{selectSizePrice}}</view>
+      </view>
+      <view class="pop-goods-close" bindtap="closePopupTap"></view>
+    </view>
+    <view class="size-label-box">
+      <block wx:for="{{goodsDetail.properties}}" wx:for-item="property" wx:for-index="idx" wx:key="id">
+        <view class="label">{{property.name}}</view>
+        <view class="label-item-box">
+          <view class="label-item {{item.active ? 'active' : '' }}" wx:for="{{property.childsCurGoods}}" wx:key="id" bindtap="labelItemTap" data-propertyindex="{{idx}}" data-propertyid="{{property.id}}" data-propertyname="{{property.name}}" data-propertychildindex="{{index}}"
+            data-propertychildid="{{item.id}}" data-propertychildname="{{item.name}}">
+            {{item.name}}
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="buy-num-box">
+      <view class="num-label">购买数量</view>
+      <view class="num-box">
+        <view class="num-jian {{buyNumber == buyNumMin ? 'hui': ''}}" bindtap="numJianTap">-</view>
+        <view class="num-input">
+          <input type="number" value="{{buyNumber}}" disabled/>
+        </view>
+        <view class="num-jia {{buyNumber== buyNumMax ? 'hui': ''}}" bindtap="numJiaTap">+</view>
+      </view>
+    </view>
+    <view class="popup-join-btn" wx:if="{{thetype =='cart'}}" bindtap="addShopCar">
+      加入购物车
+    </view>
+    <view class="popup-join-btn" wx:if="{{thetype =='buy'}}" bindtap="btnOrderDone">
+      立即购买
+    </view>
+  </view>
+</view>

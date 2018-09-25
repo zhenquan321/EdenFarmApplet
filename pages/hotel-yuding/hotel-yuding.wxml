@@ -1,0 +1,126 @@
+<view class="container">
+  <view class="main-view">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" style='height:250px;background-color:#fff;' interval="{{interval}}" duration="{{duration}}" class="swiper-box" id="top">
+      <block wx:for-items="{{gallery}}" wx:key="item">
+        <swiper-item>
+          <image class="slide-image" src="{{item.img_url}}" bindload="cusImageLoad" style="width:375px;height:300px;" />
+        </swiper-item>
+      </block>
+    </swiper>
+
+    <view class="goods-info goods-white div">
+      <view class="goods-name div">{{goods.goods_name}}</view>
+      <view class="p tuan_goods_cx">
+        <view class="span"></view>
+      </view>
+
+      <view class="goods_price div">
+        <view class="red span">
+          <view class="red-padding span">￥</view>
+          {{goods.market_price}}
+        </view>
+        <!--<view class="price-spec span">
+                    <view class="span">/</view>
+                    4个 
+                </view>-->
+        <view class="grey span">
+          <view class="grey-padding span">
+            <view class="small">￥</view>
+          </view>
+          {{goods.price}}
+        </view>
+        <view class="market-price span">（会员价）</view>
+      </view>
+
+      <view class="goods-sold div">累计销量：{{goods.sell_count
+        < 10000 ? goods.sell_count : "10000+"}}件 </view>
+
+          <view class="rule-intro div">
+          </view>
+
+
+
+
+
+          <!--底部购买菜单-->
+          <view class="footer-box">
+            <view class="contact">
+              <contact-button style="opacity:0;position:absolute;" type="default-dark" session-from="weapp" size="27"></contact-button>
+              客服
+            </view>
+            <view class="shop-cart-btn" bindtap="goShopCar">
+              <view class="shop-num">({{shopNum}})</view>
+              购物车
+            </view>
+            <view class="join-shop-cart" wx:if="{{cate_id!=2}}" bindtap="toAddShopCar">加入购物车</view>
+            <view class="now-buy" style="width:{{cate_id==2 ? '500rpx' :'250rpx'}}" bindtap="buyNow">立即预定</view>
+          </view>
+
+      </view>
+    </view>
+    <view class="date-select flex" bindtap="calendarChoose" hidden='{{show_calendar}}'>
+      <view class="stay-start gridYr sub">
+        <view class="grey">
+          入住
+        </view>
+        <view class="stay-time green">
+          {{checkintime}}
+        </view>
+      </view>
+      <view class="stay-end sub">
+        <view class="grey">
+          离店
+        </view>
+        <view class="stay-time green">
+          {{leavetime}}
+        </view>
+      </view>
+      <view class="stay-date gridFourCirle grey">
+        共 {{daysNum}} 晚
+      </view>
+    </view>
+
+
+    <view class="rule-intro div">
+    </view>
+    <view class="input">
+      <view class="line">
+        <view class="line-labe">
+          <text>入住人数</text>
+        </view>
+        :
+        <view>
+          <input class="theinput" type="number" name="num" placeholder="请输入成人房客人数" bindinput="inputquantity" placeholder-style="font-size:30rpx"/>
+        </view>
+      </view>
+      <view class="line">
+        <view class="line-labe">
+          <text>姓名</text>
+        </view>
+        :
+        <view>
+          <input class="theinput"  name="userName" placeholder="请输入您的姓名" bindinput="userNameInput" placeholder-style="font-size:30rpx"/>
+        </view>
+      </view>
+      <view class="line">
+        <view class="line-labe">
+          <text>手机号</text>
+        </view>
+        :
+        <view>
+          <input class="theinput" type="number" name="phone" placeholder="请输入手机号" bindinput="phoneInput" placeholder-style="font-size:30rpx" />
+        </view>
+      </view>
+    </view>
+
+
+    <view class="rule-intro div">
+    </view>
+
+    <view class="image-text goods-white">
+      <view class="text-title">房间详情</view>
+      <import src="../../utils/wxParse/wxParse.wxml" />
+      <!--<template is="wxParse" data="{{wxParseData}}"/>-->
+      <template is="wxParse" data="{{wxParseData:goods_desc.nodes}}" />
+    </view>
+  </view>

@@ -1,0 +1,133 @@
+
+<!--week 行 一 二 ...-->
+<view class="weeks flex">
+  <view class="sub week" wx:for="{{weeks_ch}}" wx:key="{{index}}" data-idx="{{index}}">{{item}}</view>
+</view>
+<scroll-view scroll-y="true" class="tc scroll-days">
+  <view class="calendar">
+
+    <!--一共显示三个月 当前月  下一个月  下下个月-->
+
+    <!--当前月-->
+    <view class="days gridXt clearfix">
+      <view class="date-area green">{{cur_year || "--"}} 年 {{cur_month || "--"}} 月</view>
+
+      <!--将日期和周末对齐-->
+      <view wx:if="{{hasEmptyGrid}}" class="grid" wx:for="{{empytGrids}}" wx:key="{{index}}" data-idx="{{index}}"></view>
+
+      <!--日期列表-->
+      <block wx:for="{{days}}" wx:key="{{index}}">
+        <view wx:if="{{index > startIndex && index < stopIndex}}">
+          <view class="grid mid-day" data-idx="{{index}}">
+            <view class="day" bindtap="dayDidSelected" data-value="{{item}}" data-year="{{cur_year}}" data-month="{{cur_month}}" data-day="{{item}}" data-index="{{index}}">
+              <view class="time-day">{{item}}</view>
+            </view>
+          </view>
+        </view>
+        <view wx:elif="{{(index==startIndex && index==stopIndex)||(index==startIndex && index!=stopIndex)}}">
+          <view class="grid first-day" data-idx="{{index}}">
+            <view class="day" bindtap="dayDidSelected" data-value="{{item}}" data-year="{{cur_year}}" data-month="{{cur_month}}" data-day="{{item}}" data-index="{{index}}">
+              <view class="time-day">{{item}}</view>
+            </view>
+          </view>
+        </view>
+        <view wx:elif="{{index!=startIndex && index==stopIndex}}">
+          <view class="grid last-day" data-idx="{{index}}">
+            <view class="day" bindtap="dayDidSelected" data-value="{{item}}" data-year="{{cur_year}}" data-month="{{cur_month}}" data-day="{{item}}" data-index="{{index}}">
+              <view class="time-day">{{item}}</view>
+            </view>
+          </view>
+        </view>
+        <view wx:else>
+          <view class="grid " data-idx="{{index}}">
+            <view class="day" bindtap="dayDidSelected" data-value="{{item}}" data-year="{{cur_year}}" data-month="{{cur_month}}" data-day="{{item}}" data-index="{{index}}">
+              <view class="time-day">{{item}}</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+
+    <!--下月-->
+    <view class="days gridXt clearfix">
+      <view class="date-area linght">{{next_year || "--"}} 年 {{next_month || "--"}} 月</view>
+
+      <!--将日期和周末对齐-->
+      <view wx:if="{{hasEmptyGrid1}}" class="grid" wx:for="{{empytGrids1}}" wx:key="{{index}}" data-idx="{{index}}"> </view>
+
+      <!--日期列表-->
+      <block wx:for="{{next_days}}" wx:key="{{index}}">
+        <view wx:if="{{index+100 > startIndex && index+100 < stopIndex}}">
+          <view class="grid mid-day" data-idx="{{index}}">
+            <view class="day" bindtap="dayDidSelected" data-value="{{item}}" data-year="{{next_year}}" data-month="{{next_month}}" data-day="{{item}}" data-index="{{index+100}}">
+              <view class="time-day">{{item}}</view>
+            </view>
+          </view>
+        </view>
+        <view wx:elif="{{(index+100==startIndex && index+100==stopIndex)||(index+100==startIndex && index+100!=stopIndex)}}">
+          <view class="grid first-day" data-idx="{{index}}">
+            <view class="day" bindtap="dayDidSelected" data-value="{{item}}" data-year="{{next_year}}" data-month="{{next_month}}" data-day="{{item}}" data-index="{{index+100}}">
+              <view class="time-day">{{item}}</view>
+            </view>
+          </view>
+        </view>
+        <view wx:elif="{{index+100!=startIndex && index+100==stopIndex}}">
+          <view class="grid last-day" data-idx="{{index}}">
+            <view class="day" bindtap="dayDidSelected" data-value="{{item}}" data-year="{{next_year}}" data-month="{{next_month}}" data-day="{{item}}" data-index="{{index+100}}">
+              <view class="time-day">{{item}}</view>
+            </view>
+          </view>
+        </view>
+        <view wx:else>
+          <view class="grid " data-idx="{{index}}">
+            <view class="day" bindtap="dayDidSelected" data-value="{{item}}" data-year="{{next_year}}" data-month="{{next_month}}" data-day="{{item}}" data-index="{{index+100}}">
+              <view class="time-day">{{item}}</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+
+    <!--下下月-->
+    <view class="days gridXt clearfix">
+      <view class="date-area linght">{{next_two_year || "--"}} 年 {{next_two_month || "--"}} 月</view>
+
+      <!--将日期和周末对齐-->
+      <view wx:if="{{hasEmptyGrid2}}" class="grid" wx:for="{{empytGrids2}}" wx:key="{{index}}" data-idx="{{index}}"> </view>
+
+      <!--日期列表{{index > startIndex && index < stopIndex ? 'mid-day' : ''}} {{index == startIndex ? 'first-day' : ''}}{{index == stopIndex ? 'last-day' : ''}}-->
+
+<block wx:for="{{next_two_days}}" wx:key="{{index}}">
+        <view wx:if="{{index+200 > startIndex && index+200 < stopIndex}}">
+          <view class="grid mid-day" data-idx="{{index}}">
+            <view class="day"  bindtap="dayDidSelected" data-day="{{item}}" data-year="{{next_two_year}}" data-month="{{next_two_month}}" data-index="{{index+200}}">
+              <view class="time-day">{{item}}</view>
+            </view>
+          </view>
+        </view>
+        <view wx:elif="{{(index+200==startIndex && index+200==stopIndex)||(index+200==startIndex && index+200!=stopIndex)}}">
+          <view class="grid first-day" data-idx="{{index}}">
+            <view class="day" bindtap="dayDidSelected" data-day="{{item}}" data-year="{{next_two_year}}" data-month="{{next_two_month}}" data-index="{{index+200}}">
+              <view class="time-day">{{item}}</view>
+            </view>
+          </view>
+        </view>
+        <view wx:elif="{{index+200!=startIndex && index+200==stopIndex}}">
+          <view class="grid last-day" data-idx="{{index}}">
+            <view class="day"  bindtap="dayDidSelected" data-day="{{item}}" data-year="{{next_two_year}}" data-month="{{next_two_month}}" data-index="{{index+200}}">
+              <view class="time-day">{{item}}</view>
+            </view>
+          </view>
+        </view>
+        <view wx:else>
+          <view class="grid " data-idx="{{index}}">
+            <view class="day" bindtap="dayDidSelected" data-day="{{item}}" data-year="{{next_two_year}}" data-month="{{next_two_month}}" data-index="{{index+200}}">
+              <view class="time-day">{{item}}</view>
+            </view>
+          </view>
+        </view>
+      </block>
+
+ </view>
+  </view>
+</scroll-view>

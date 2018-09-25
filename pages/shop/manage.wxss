@@ -1,0 +1,128 @@
+page {
+    background: #f2f7fa;
+}
+
+.app{
+  height: auto; width: auto; overflow: hidden;
+  font-size: 26rpx;
+}
+
+
+.header{
+  width: 100%;
+  height: 400rpx;
+  background:  #60a411;
+  padding-top: 20rpx;
+}
+
+.hd_main{
+  width: 90%;
+  margin-left: 5%;
+  height: auto; overflow: hidden;
+}
+
+.hd_main .icon{
+  width: 50%;
+  margin-top: 50rpx;
+  float: left;
+  text-align: center;
+}
+.hd_main .icon .image{
+  position: relative;
+  height: 80rpx;
+  width: 100rpx;
+  margin: 0 auto;
+}
+.hd_main .icon .image image{
+  width: 60rpx; height: 60rpx;
+  margin-top: 20rpx;
+}
+.hd_main .icon .text_wait{
+  text-align: center;
+  color: #f1c33a;
+  font-size: 24rpx;
+  margin-top: 20rpx;
+}
+.hd_main .icon .text_sh{
+  text-align: center;
+  color: #57a1e0;
+  font-size: 24rpx;
+  margin-top: 20rpx;
+}
+.hd_main .icon .text{     
+  text-align: center;
+  color: #fff;
+  font-size: 24rpx;
+  margin-top: 20rpx;
+}
+.tips{
+  height: 40rpx;
+  width: 40rpx;
+  border-radius: 20rpx;
+  background: #ef5033;
+  color:#fff;
+  font-size: 24rpx;
+  line-height: 40rpx;
+  position: absolute; right: 0;
+  top: 0; 
+}
+
+.action {
+  width: 100%;
+  margin-top: 20rpx;
+  height: auto; overflow: hidden;
+}
+
+.action .col{
+  width: 100%;
+  height: 80rpx;
+  line-height: 60rpx;
+  margin-top: 20rpx;
+  background: #fff;
+  border-bottom: 1px solid #f3f8fc;
+  border-top: 1px solid #f3f8fc;
+}
+.action .tubiao{
+  float: left; width: 40rpx; height: 40rpx;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+.action .jiantou{
+   float: right; width: 30rpx; height: 30rpx;
+  margin-right: 20rpx;
+  margin-top: 25rpx;
+}
+
+.action .col text{
+  height: 40rpx;
+  width: 200rpx;
+  float: left;
+  line-height: 40rpx;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+  color: #666; 
+}
+.qihuan{
+  width: 100%;
+  height: 80rpx;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 1000;
+  background: #fff;
+}
+.qihuan image{
+  width: 40rpx;
+  height: 40rpx;
+  float: left;
+  margin-left: 200rpx; 
+  margin-top: 20rpx;
+}
+.qihuan text{
+   font-size: 26rpx;
+   margin-left: 20rpx;
+   color: #1ba8b9; 
+    float: left;
+    margin-top: 20rpx;
+}

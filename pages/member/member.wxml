@@ -1,0 +1,85 @@
+<view class="my_head">
+  <view class="my_head_pic">
+    <image id="uinLogo" class="my_head_img img" src="{{userInfo.avatarUrl}}"></image>
+  </view>
+
+  <view class="my_head_info">
+    <view class="my_head_name" id='nickname'>{{userInfo.nickName}}</view>
+  </view>
+</view>
+
+<view class="fui-cell-group fui-cell-click">
+  <navigator class="fui-cell" hover-class="none" url="/pages/order/index/index">
+    <image src="{{icons.cart}}" class="fui-cell-icon"></image>
+    <view class="fui-cell-text">我的订单</view>
+    <view class="fui-cell-remark">查看全部订单</view>
+  </navigator>
+  <view class="fui-icon-group nomargin">
+    <navigator hover-class="none" class="fui-icon-col" url="../order/index/index?type=0">
+      <view class="badge" wx:if="{{member.statics.order_0 > 0}}">{{member.statics.order_0}}</view>
+      <view class="icon">
+        <image src="{{icons.daifukuan}}"></image>
+      </view>
+      <view class="text">待付款</view>
+    </navigator>
+    <navigator hover-class="none" class="fui-icon-col" url="../order/index/index?type=1">
+      <view class="badge" wx:if="{{member.statics.order_1 > 0}}">{{member.statics.order_1}}</view>
+      <view class="icon">
+        <image src="{{icons.daishouhuo}}"></image>
+      </view>
+      <view class="text">待发货</view>
+    </navigator>
+    <navigator hover-class="none" class="fui-icon-col" url="../order/index/index?type=1">
+      <view class="badge" wx:if="{{member.statics.order_2 > 0}}">{{member.statics.order_1}}</view>
+      <view class="icon">
+        <image src="{{icons.daipingjia}}"></image>
+      </view>
+      <view class="text">待收货</view>
+    </navigator>
+    <navigator hover-class="none" class="fui-icon-col" url="../order/index/index?type=4">
+      <view class="badge" wx:if="{{member.statics.order_4 > 0}}">{{member.statics.order_2}}></view>
+      <view class="icon">
+        <image src="{{icons.yiwancheng}}"></image>
+      </view>
+      <view class="text">已完成</view>
+    </navigator>
+  </view>
+</view>
+
+
+
+<view class="goods-info">
+  <view class="row-box" >
+    <view class="row-label">伊甸卡余额</view>
+    <view class="right-text">¥ {{userInfo.balance}}</view>
+  </view>
+   <navigator url="../addresses/addresses" class="a" href="addresses.html" hover-class="none">
+  <view class="row-box">
+    <view class="row-label">地址管理</view>
+    <view class="right-text"> {{balance}}</view>
+  </view>
+</navigator>
+</view>
+
+
+<view class="goods-info">
+  <view class="row-box">
+    <view class="row-label">站内消息</view>
+    <view class="right-text"> {{amount_str}}</view>
+  </view>
+</view>
+
+<view class="goods-info">
+    <view class="row-box">
+    <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">授权手机号</button>
+  </view>
+</view>
+
+<view class="goods-info">
+    <view class="row-box">
+    <button bindtap="changeShop">切换成商家</button>
+  </view>
+</view>
+
+
+

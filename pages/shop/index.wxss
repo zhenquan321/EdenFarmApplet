@@ -1,0 +1,83 @@
+.app {
+  font-size: 26rpx;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.title{
+    height: 100rpx;
+    line-height: 100rpx;
+    font-size: 60rpx;
+    color: #666;
+    font-weight: bold;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 50rpx;
+}
+.info{
+  height: 80rpx;
+  line-height: 80rpx; 
+  font-size: 38rpx;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.col{
+  width: 90%;
+  margin: 0 auto;
+  height: 80rpx;
+  border-bottom: 1rpx solid #ccc;
+  margin-top: 30rpx;  
+}
+.err{
+  width: 90%;
+  margin: 0 auto;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 24rpx;
+  color: red;
+  text-align: center;
+}
+
+.col text{
+  float: left;
+  width: 150rpx;
+  margin-top: 20rpx;
+}
+.col input{
+  float: left;
+  width: 250rpx;
+  margin-left: 10rpx;
+  margin-top: 10rpx;
+}
+
+.col .huoquyanma{
+  float: left;
+  width: 150rpx;
+  text-align: center;
+  margin-top: 20rpx;
+  background:  #03bbd5;
+  padding: 10rpx;
+  border-radius: 3rpx; color: #fff;
+}
+
+.col .huoqu_djs{
+  float: left;
+  width: 150rpx;
+  text-align: center;
+  margin-top: 20rpx;
+  background:  #e2e2e2;
+  padding: 10rpx;
+  border-radius: 3rpx; color: #ccc;
+}
+
+.btn{
+  margin: 0 auto;
+  margin-top: 80rpx;
+  width: 300rpx;
+  margin-bottom: 80rpx;
+  background: #60a411;
+  color: #fff;
+  height: 80rpx; line-height: 80rpx; font-size: 28rpx; 
+}

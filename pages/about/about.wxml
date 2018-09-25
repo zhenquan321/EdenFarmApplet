@@ -1,0 +1,52 @@
+<view class="main">
+
+  <view class="mhomebox02">
+    <view class="title">伊甸农场全力打造安全食材供应基地</view>
+    <view class="p">伊甸为了能够给家人们提供全方位、多品种、高品质、优服务的安全放心食材！为了家人们能够吃上放心饭，拥有自家的放心菜园，我们在前行中不断的努力完善。
+    </view>
+    <view class="mge40 mge_mobile"></view>
+  </view>
+  <view id="mhomeicon">
+    <view class="m4col mchange">
+      <view class="mchange">
+        <image src="http://www.returneden.com/wp-content/uploads/2017/11/11-1.jpg" alt="健康" />
+      </view>
+      <view>
+        <view class="a">健康</view>
+      </view>
+      <view class=" p ">农场位于北京北350公里的河北坝上草原，平均海拔1486米，最高海拔约2400米；平均气温为17.4℃，农场建园五年，占地200亩。杜绝转基因、大部分自留种子。</view>
+
+      <view class="m4col mycols ">
+        <view class="mchange ">
+          <image src="http://www.returneden.com/wp-content/uploads/2017/11/2-1.jpg " alt="安全 " />
+        </view>
+        <view>
+          <view class="a">安全</view>
+        </view>
+        <view class="p">土地恢复修养五年，实现种养立体化，并且杜绝化肥、农药、除草剂！自己养殖，实现园区种养自我循环，肥料来源丰富；还有发酵母液保驾护航</view>
+      </view>
+
+      <view class="m4col">
+        <view class="mchange">
+          <image src="http://www.returneden.com/wp-content/uploads/2017/11/51.jpg" alt="奉献" />
+        </view>
+        <view>
+          <view class="a">奉献</view>
+        </view>
+        <view class=" p ">以爱为驱动，健康为原则，服侍为动机，安全食品为途径， 恢复保护土壤，以消费者健康为基础；始于农场，非止于农场；原于农业，却超越农业</view>
+
+        <view class="m4col mycols " style="margin:0; ">
+          <view class="mchange ">
+            <image src="http://www.returneden.com/wp-content/uploads/2017/11/4-1.jpg " alt="责任 " />
+          </view>
+          <view>
+            <view class="a">责任</view>
+          </view>
+          <view class="p">我们寻求成为诚信和负责的典范，并不仅仅通过我们的产品，也通过我们的经营方式，开放。诚实。负责。成为一个祝福当地的农业和农民的产业</view>
+          <view class="mge40 mge_mobile"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>
