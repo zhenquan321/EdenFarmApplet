@@ -19,20 +19,26 @@ Page({
     scrollTop: "0",
     loadingMoreHidden: true,
     nav: [
-      {
-        url: '../../pages/about/about',
-        icon: '/static/images/about.png',
-        navname: '关于我们'
-      },
+      // {
+      //   url: '../../pages/about/about',
+      //   icon: '/static/images/about.png',
+      //   navname: '关于我们'
+      // },
+     
       {
         url: '../../pages/article/index/index',
         icon: '/static/images/news.png',
-        navname: '农场资讯',
+        navname: '走进伊甸',
+      },
+      {
+        url: '../../pages/about/about',
+        icon: '/static/images/about.png',
+        navname: '伊甸食材'
       },
       {
         url: '../../pages/cate/cate?id=4',
         icon: '/static/images/new.png',
-        navname: '本周新菜'
+        navname: '伊甸客房'
       },
       {
         url: '../../pages/cate/cate?id=3',
@@ -215,7 +221,11 @@ Page({
   //打开分类页
   toCategory: function (event) {
     var catid = event.currentTarget.dataset.catid;
+    var indexz = event.currentTarget.dataset.indexz;
+    
     app.globalData.catid = catid;//设置全局变量(app已经定义 var app=getApp())
+    app.globalData.indexz = indexz;//设置全局变量(app已经定义 var app=getApp())
+    
     console.log(catid);
     wx.switchTab({
       url: '../categories/categories'

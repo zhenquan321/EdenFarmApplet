@@ -67,12 +67,16 @@ Page({
 
   onLoad: function (options) {
     that = this;
+    var cate_id = app.globalData.catid;
+    var indexz = app.globalData.indexz;
+
+
     this.search_title = '';
     //console.log(3);
     //wx.showNavigationBarLoading();
     var tcindex = options.tcindex;
     var tcid = options.tcid;
-    this.setData({ "current_index": 0 });
+    this.setData({ "current_index": indexz });
     this.cate_id=1;
     if(options.id){
       this.cate_id = options.id;
@@ -88,9 +92,12 @@ Page({
   //  this.getMap();
     this.goodsCate();
     this.nc_goodsCate();
-    // 获取分类id
-    var cate_id = app.globalData.catid;
-    console.log(cate_id);
+   
+   // 获取分类id
+   
+    if (cate_id){
+      this.dataRendered(cate_id, indexz)
+    }
   },
 
   //获取地区
@@ -439,22 +446,73 @@ Page({
         show_menu: true,
         item: 0,
       })
-    }
-      else{
+    }else{
       that.setData({
         show_calendar:true,
         show_menu: true,
         item: 0,
       })
-      }
-
-      if(this.cate_id==3){
-        that.setData({
-          thetype:'buy',
-        })
-      }
-    
+    }
+    if(this.cate_id==3){
+      that.setData({
+        thetype:'buy',
+      })
+    }
     this.current_index = e.currentTarget.dataset.index;
+    var nav_temp = 0;
+    if (this.data.current_index == undefined || this.data.current_index < this.current_index) {
+      if (this.data.cates.length - this.current_index >= 2 && this.current_index >= 2) {
+        nav_scroll_left = parseInt((this.current_index - 2)) * this.data.windowWidth + this.data.windowWidth / 5;
+        this.setData({ "nav_scroll_left": nav_scroll_left });
+      }
+    } else if (this.data.current_index > this.current_index) {
+      if (this.data.cates.length - this.current_index > 3) {
+        if (this.current_index > 1) {
+          nav_scroll_left = -(parseInt((this.current_index - 2)) * this.data.windowWidth - this.data.windowWidth / 5);
+        }
+        this.setData({ "nav_scroll_left": nav_scroll_left });
+      }
+    }
+    this.setData({ "current_index": this.current_index });
+    this.refresh();
+  },
+
+  //自动调用分类
+  dataRendered: function (cate_id, index) {
+    var that = this;
+    that.setData({
+      isshow: true,
+      thetype: 'cart',
+    })
+    var nav_scroll_left = 0;
+    this.cate_id = cate_id;
+    if (this.cate_id == 1) {
+      that.setData({
+        show_menu: false,
+        show_calendar: true,
+        item: 200,
+      })
+    }
+    else if (this.cate_id == 2) {
+      that.setData({
+        show_calendar: false,
+        show_menu: true,
+        item: 0,
+      })
+    } else {
+      that.setData({
+        show_calendar: true,
+        show_menu: true,
+        item: 0,
+      })
+    }
+    if (this.cate_id == 3) {
+      that.setData({
+        thetype: 'buy',
+      })
+    }
+    //this.current_index = e.currentTarget.dataset.index;
+    this.current_index = index;
     var nav_temp = 0;
     if (this.data.current_index == undefined || this.data.current_index < this.current_index) {
       if (this.data.cates.length - this.current_index >= 2 && this.current_index >= 2) {
