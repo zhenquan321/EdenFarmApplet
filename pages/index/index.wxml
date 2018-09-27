@@ -87,7 +87,7 @@
       <view class="flex-grow-0" wx:for="{{cat.goods}}"  wx:for-index="goods_index" wx:for-item="goods">
         <navigator wx:if="{{goods_index<4}}" class="goods-item" url="/pages/goods/detail/detail?goods_id={{goods.goods_id}}&image={{goods.image_url}}">
           <image mode="aspectFill" src="{{goods.image_url}}"></image>
-          <text class="text-more-2 {{cat_goods_cols==3?'fs-sm':''}}" style="padding:0 20rpx;height:2.8em;line-height:1.4;">{{goods.goods_name}}</text>
+          <text class="text-more-2 {{cat_goods_cols==3?'fs-sm':''}}" style="padding:26rpx 15rpx 14rpx;height:0.1rem;line-height:0.1rem;">{{goods.goods_name}}</text>
           <text class="goods-price">￥{{goods.market_price}}</text>
           <view class="flex-row" style="padding:10rpx 20rpx" wx:if="{{cat_goods_cols==2}}">
             <view class="flex-grow-1" style="color:#ff334b">￥{{goods.market_price}}</view>

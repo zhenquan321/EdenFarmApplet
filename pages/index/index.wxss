@@ -1031,9 +1031,11 @@
 }
 
 .goods-list .flex-grow-0 {
-    width: 32%;
-    padding-left: 5rpx;
-    padding-right: 5rpx;
+  width:30%;
+  padding-left:2%;
+  padding-right:1%;
+  margin-top:10rpx;
+
 }
 
 .goods-list {
@@ -1066,10 +1068,10 @@
 }
 
 .goods-list .goods-item .goods-price {
-    color: #ff334b;
-    text-align: center;
-    display: block;
-    padding: 5rpx 5rpx 10rpx 5rpx;
+    color:#ff334b;
+    text-align:left;
+    display:block;
+    padding:0rpx 5rpx 10rpx 10rpx;
 }
 
 .goods-list.goods-list-cols-2 .flex-grow-0 {
