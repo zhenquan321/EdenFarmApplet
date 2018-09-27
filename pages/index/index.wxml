@@ -8,7 +8,14 @@
   </swiper>
 </view>
 <view class="fui-icon-group col-4 noborder circle" wx:if="{{nav}}">
-  <navigator class="fui-icon-col" openType="navigate" url="{{item.url}}" wx:for="{{nav}}" wx:for-index="idx">
+  <navigator class="fui-icon-col" openType="navigate" url="{{item.url}}" wx:for="{{nav}}" wx:for-index="idx" wx:if="idx==0">
+    <view>
+     <image class="icon" src="{{item.icon}}"></image>
+    </view>
+    <view class="navs-navname">{{item.navname}}</view>
+  </navigator>
+
+  <navigator class="fui-icon-col" bindtap="toCategory" openType="reLaunch" data-catid="{{item.cate_id}}" data-indexz="{{item._index}}" url="{{item.url}}" wx:for="{{nav1}}" wx:for-index="idx">
     <view>
      <image class="icon" src="{{item.icon}}"></image>
     </view>

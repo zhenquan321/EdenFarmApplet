@@ -367,9 +367,10 @@ page {
 }
 
 .fui-icon-group .fui-icon-col .icon {
-  margin: auto;
-  text-align: center;
-  line-height: 76rpx;
+  margin:auto;
+  text-align:center;
+  line-height:30rpx;
+  margin-top:14rpx;
 }
 
 .fui-icon-group.col-3 .fui-icon-col {
@@ -456,7 +457,7 @@ page {
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
-    padding: 24rpx 30rpx 12rpx 30rpx;
+    padding: 36rpx 30rpx 12rpx 30rpx;
     font-size: 28rpx;
     color: #000;
 }

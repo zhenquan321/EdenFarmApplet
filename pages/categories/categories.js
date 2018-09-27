@@ -433,6 +433,7 @@ Page({
     })
     var nav_scroll_left = 0;
     this.cate_id = e.currentTarget.dataset.cate_id;
+    console.log(this.cate_id)
     if(this.cate_id==1){
       that.setData({
        show_menu:false,
@@ -459,6 +460,7 @@ Page({
       })
     }
     this.current_index = e.currentTarget.dataset.index;
+    console.log(this.current_index);
     var nav_temp = 0;
     if (this.data.current_index == undefined || this.data.current_index < this.current_index) {
       if (this.data.cates.length - this.current_index >= 2 && this.current_index >= 2) {

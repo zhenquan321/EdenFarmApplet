@@ -999,7 +999,7 @@ min-height: 140rpx;
 	position:absolute;
 	bottom: 15%;
 	right:5%;
-	font-size:30rpx;
+	font-size:26rpx;
 	color:#60a411;
 	width: 40rpx;
 	height: 40rpx;

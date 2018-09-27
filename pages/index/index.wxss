@@ -3499,10 +3499,11 @@ image.radius {
 }
 
 .fui-icon-group .fui-icon-col .icon {
-    height: 88rpx;
+    height: 88rpx!important;
     margin: auto;
     text-align: center;
-    line-height: 88rpx;
+    line-height: 88rpx!important;
+    width: 88rpx;
 }
 
 .fui-icon-group.col-3 .fui-icon-col {

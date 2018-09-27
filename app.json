@@ -22,7 +22,8 @@
     "pages/shop/index",
     "pages/shop/manage",
     "pages/shop/order/index",
-    "pages/shop/order/detail"
+    "pages/shop/order/detail",
+    "static/images/img"
   ],
   "window": {
     "backgroundTextStyle": "light",

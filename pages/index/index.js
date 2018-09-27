@@ -19,31 +19,35 @@ Page({
     scrollTop: "0",
     loadingMoreHidden: true,
     nav: [
-      // {
-      //   url: '../../pages/about/about',
-      //   icon: '/static/images/about.png',
-      //   navname: '关于我们'
-      // },
-     
       {
         url: '../../pages/article/index/index',
-        icon: '/static/images/news.png',
+        icon: '/static/images/imgNew/icon4.png',
         navname: '走进伊甸',
+        _index: 1,
+        cate_id: 1,
+      },
+    ],
+    nav1: [
+      {
+        url: '/pages/categories/categories',
+        icon: '/static/images/imgNew/icon1.png',
+        navname: '伊甸食材',
+        _index: 0,
+        cate_id: 1,
       },
       {
-        url: '../../pages/about/about',
-        icon: '/static/images/about.png',
-        navname: '伊甸食材'
+        url: '/pages/categories/categories',
+        icon: '/static/images/imgNew/icon3.png',
+        navname: '伊甸客房',
+        _index: 3,
+        cate_id: 2,
       },
       {
-        url: '../../pages/cate/cate?id=4',
-        icon: '/static/images/new.png',
-        navname: '伊甸客房'
-      },
-      {
-        url: '../../pages/cate/cate?id=3',
-        icon: '/static/images/taocan.png',
+        url: '/pages/categories/categories',
+        icon: '/static/images/imgNew/icon2.png',
         navname: '伊甸套餐',
+        _index: 1,
+        cate_id: 17,
       },
 
     ],
@@ -222,7 +226,7 @@ Page({
   toCategory: function (event) {
     var catid = event.currentTarget.dataset.catid;
     var indexz = event.currentTarget.dataset.indexz;
-    
+    console.log(catid, indexz);
     app.globalData.catid = catid;//设置全局变量(app已经定义 var app=getApp())
     app.globalData.indexz = indexz;//设置全局变量(app已经定义 var app=getApp())
     

@@ -10,7 +10,7 @@
 
 <view class="fui-cell-group fui-cell-click">
   <navigator class="fui-cell" hover-class="none" url="/pages/order/index/index">
-    <image src="{{icons.cart}}" class="fui-cell-icon"></image>
+    <!-- <image src="{{icons.cart}}" class="fui-cell-icon"></image> -->
     <view class="fui-cell-text">我的订单</view>
     <view class="fui-cell-remark">查看全部订单</view>
   </navigator>
@@ -53,12 +53,18 @@
     <view class="row-label">伊甸卡余额</view>
     <view class="right-text">¥ {{userInfo.balance}}</view>
   </view>
+  <navigator url="../addresses/addresses" class="a" href="addresses.html" hover-class="none">
+    <view class="row-box">
+      <view class="row-label">会员中心</view>
+      <view class="right-text"> {{balance}}</view>
+    </view>
+  </navigator>
    <navigator url="../addresses/addresses" class="a" href="addresses.html" hover-class="none">
-  <view class="row-box">
-    <view class="row-label">地址管理</view>
-    <view class="right-text"> {{balance}}</view>
-  </view>
-</navigator>
+    <view class="row-box">
+      <view class="row-label">地址管理</view>
+      <view class="right-text"> {{balance}}</view>
+    </view>
+  </navigator>
 </view>
 
 
