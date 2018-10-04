@@ -137,7 +137,7 @@ Page({
     getDetail.then(response => {
 
       if (response.data.result == 'ok') {
-        var needpay_str = response.data.goods.market_price * that.data.quantity * that.data.daysNum;
+        var needpay_str = response.data.goods.market_price  * that.data.daysNum;
         WxParse.wxParse('goods_desc', 'html', response.data.goods.goods_desc, that, 5)
         that.setData({
           cate_id: response.data.goods.cate_id,

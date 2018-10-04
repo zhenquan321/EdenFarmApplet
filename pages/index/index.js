@@ -21,7 +21,7 @@ Page({
     nav: [
       {
         url: '../../pages/article/index/index',
-        icon: '/static/images/imgNew/icon4.png',
+        icon: '/static/images/imgNew/icon1.png',
         navname: '走进伊甸',
         _index: 1,
         cate_id: 1,
@@ -30,7 +30,7 @@ Page({
     nav1: [
       {
         url: '/pages/categories/categories',
-        icon: '/static/images/imgNew/icon1.png',
+        icon: '/static/images/imgNew/icon4.png',
         navname: '伊甸食材',
         _index: 0,
         cate_id: 1,
@@ -228,9 +228,8 @@ Page({
     var indexz = event.currentTarget.dataset.indexz;
     console.log(catid, indexz);
     app.globalData.catid = catid;//设置全局变量(app已经定义 var app=getApp())
-    app.globalData.indexz = indexz;//设置全局变量(app已经定义 var app=getApp())
-    
-    console.log(catid);
+    app.globalData.indexz = catid == 2 ? 4:indexz;//设置全局变量(app已经定义 var app=getApp())
+    console.log(app.globalData.indexz);
     wx.switchTab({
       url: '../categories/categories'
     });

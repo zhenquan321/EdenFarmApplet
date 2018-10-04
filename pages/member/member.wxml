@@ -53,12 +53,12 @@
     <view class="row-label">伊甸卡余额</view>
     <view class="right-text">¥ {{userInfo.balance}}</view>
   </view>
-  <navigator url="../addresses/addresses" class="a" href="addresses.html" hover-class="none">
+  <!-- <navigator url="../addresses/addresses" class="a" href="addresses.html" hover-class="none">
     <view class="row-box">
       <view class="row-label">会员中心</view>
       <view class="right-text"> {{balance}}</view>
     </view>
-  </navigator>
+  </navigator> -->
    <navigator url="../addresses/addresses" class="a" href="addresses.html" hover-class="none">
     <view class="row-box">
       <view class="row-label">地址管理</view>
@@ -68,12 +68,12 @@
 </view>
 
 
-<view class="goods-info">
+<!-- <view class="goods-info">
   <view class="row-box">
     <view class="row-label">站内消息</view>
     <view class="right-text"> {{amount_str}}</view>
   </view>
-</view>
+</view> -->
 
 <view class="goods-info">
     <view class="row-box">

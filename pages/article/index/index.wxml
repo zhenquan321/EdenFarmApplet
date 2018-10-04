@@ -6,6 +6,9 @@
     <view class="navbar-item {{ navbarArray[item].type }}" wx:key="{{ item}}" id="{{ item}}" data-cateid="{{navbarArray[item].cate_id}}"wx:for="{{ navbarShowIndexArray }}" catchtap="onTapNavbar" >
        <view class="navbar-item-wrap" hidden='{{isshow}}'>{{ navbarArray[item].cate_name }}</view>
     </view>
+     <!-- <view class="navbar-item "  catchtap="onTapNavbar" >
+       <view class="navbar-item-wrap" hidden='{{isshow}}'>关于我们</view>
+    </view> -->
   </scroll-view>
 
     <scroll-view scroll-y  class="articles" style="height:{{windowHeight}}px"  bindtouchstart="onTouchstartArticles" bindtouchend="onTouchendArticles" hidden="{{ articlesHide }}" bindscrolltolower="loadMore">

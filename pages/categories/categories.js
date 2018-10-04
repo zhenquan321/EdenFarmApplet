@@ -67,8 +67,8 @@ Page({
 
   onLoad: function (options) {
     that = this;
-    var cate_id = app.globalData.catid;
-    var indexz = app.globalData.indexz;
+    var cate_id = app.globalData.catid||1;
+    var indexz = app.globalData.indexz||0;
 
 
     this.search_title = '';
@@ -91,7 +91,7 @@ Page({
    // this.goodsList();
   //  this.getMap();
     this.goodsCate();
-    this.nc_goodsCate();
+   // this.nc_goodsCate();
    
    // 获取分类id
    
@@ -281,12 +281,13 @@ Page({
   },
 
 //获取农产品分类
-  nc_goodsCate: function (e) {
+  nc_goodsCate: function (cid) {
     var offset = 0;
     var size = 100;
     var data = {
       "offset": offset,
-      "size": size
+      "size": size,
+      "cid": cid
     };
     var url = this.baseApiUrl + "/api/goodsCate/nc_lists";
     var self = this;
@@ -316,7 +317,7 @@ Page({
     var url = this.baseApiUrl + "Api/Goods/lists";
 
     if (this.cate_id != undefined) {
-      if (nc == 1) {
+      if (nc == 1 || nc == 17) {
         data.ncp_cate_id = this.cate_id;
       } else {
         data.cate_id = this.cate_id;
@@ -439,9 +440,19 @@ Page({
        show_menu:false,
        show_calendar: true,
        item:200,
-      })
+      });
+      //调用分类
+      this.nc_goodsCate(this.cate_id);
     }
-    else if(this.cate_id==2){
+    else if (this.cate_id == 17) {
+      that.setData({
+        show_calendar: true,
+        show_menu: false,
+        item: 200,
+      });
+      //调用分类
+      this.nc_goodsCate(this.cate_id);
+    }else if(this.cate_id==2){
       that.setData({
         show_calendar: false,
         show_menu: true,
@@ -479,7 +490,7 @@ Page({
     this.refresh();
   },
 
-  //自动调用分类
+  //自动调用分类_______________________________________________
   dataRendered: function (cate_id, index) {
     var that = this;
     that.setData({
@@ -493,9 +504,19 @@ Page({
         show_menu: false,
         show_calendar: true,
         item: 200,
-      })
+      });
+      //调用分类
+      this.nc_goodsCate(this.cate_id);
     }
-    else if (this.cate_id == 2) {
+    else if (this.cate_id == 17) {
+      that.setData({
+        show_calendar: true,
+        show_menu: false,
+        item: 200,
+      });
+      //调用分类
+      this.nc_goodsCate(this.cate_id);
+    }else if (this.cate_id == 2) {
       that.setData({
         show_calendar: false,
         show_menu: true,
