@@ -980,7 +980,6 @@ sub-image {
   padding: 10px;
   margin: 10px;
   border-bottom: none !important;
-  height: 200rpx;
   position: relative;
 }
 
@@ -1001,14 +1000,18 @@ sub-image {
 }
 
 .goodsInfor {
-  margin-left: 230rpx;
+  /* margin-left: 230rpx; */
   position: relative;
+  padding-top:12px;
+
 }
 .prolist{
   margin-top: 120rpx;
 }
 .item-title{
-min-height: 150rpx;
+  /* min-height: 150rpx; */
+  padding-bottom:8px;
+
 }
 
 .item-price {
@@ -1021,8 +1024,8 @@ min-height: 150rpx;
 .order{
 
   position:absolute;
-	bottom: 9%;
-	right:2%;
+	bottom: 15px;
+	right:15px;
 	font-size:30rpx;
 	color:#fff;
 	width: 140rpx;

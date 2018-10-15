@@ -119,10 +119,12 @@ Page({
     var getLists = wxRequest.getRequest(url);
     getLists.then(response => {
       if (response.statusCode == 200 && response.data.result == "ok") {
+        console.log(response.data.list);
         that.setData({
           banner: response.data.banner,
           List: response.data.list,
         })
+
       }
       else {
         wx.showToast({

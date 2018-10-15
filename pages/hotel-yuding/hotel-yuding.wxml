@@ -57,7 +57,13 @@
               购物车
             </view>
             <view class="join-shop-cart" wx:if="{{cate_id!=2}}" bindtap="toAddShopCar">加入购物车</view>
-            <view class="now-buy" style="width:{{cate_id==2 ? '500rpx' :'250rpx'}}" bindtap="buyNow">立即预定</view>
+            <view class="now-buy" style="width:{{cate_id==2 ? '500rpx' :'250rpx'}}" bindtap="buyNow">
+              <view style='float:left'>
+                  <view style='font-size:12px;' class='span'>￥</view>
+              {{goods.market_price}}
+              </view>
+              <view style='float:right'>立即预定</view>
+            </view>
           </view>
 
       </view>

@@ -15,10 +15,10 @@ var that;
 Page({
   data: {
     "URL": 2,
- //   indicatorDots: false,
- //   autoplay: true,
- //   interval: 2500,
- //   duration: 1000,
+   indicatorDots: false,
+   autoplay: true,
+   interval: 2500,
+   duration: 1000,
     loaded: false,
     "is_over": false,
     "no_data": false,
@@ -334,22 +334,31 @@ Page({
         var agoData = self.data.goods;
         var goods = data.goods;
         if (data.goods.length != 0) {
+          for (var a = 0; a < goods.length;a++){
+            var imgList=[];
+            var data0 = goods[a].goods_imgs || "a:3:{i:0;s:59:" + goods[a].image_url +";}";
+            var data1 = data0.split('{')[1]
+            var data2 = data1.split('}')[0];
+            var data3 = data2.split('http:');
+            for (var b = 1; b < data3.length; b++){
+              var data4 = data3[b].split('.jpg')[0];
+              var data5={
+                "imgurl": 'http:' + data4 + '.jpg'
+              }
+              imgList.push(data5);
+            }
+            goods[a].imgList = imgList;
+          }
           if (data.goods.length < self.size) {
             self.setData({
-             
               "is_over": 1,
               "no_data": 1
             });
+          }
+       
+          allData = goods;
+          console.log(allData);
 
-          }
-          if (agoData) {
-            allData = agoData;
-            goods.map(function (good) {
-              allData.push(good);
-            });
-          } else {
-            allData = goods;
-          }
           self.setData({ loaded: true });
           self.setData({
             isshow: false,

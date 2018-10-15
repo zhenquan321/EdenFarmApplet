@@ -51,11 +51,17 @@
     <view class="list-item">
       <view bindtap="{{item.cate_id==2?'gotoOrder':'gotoDetail'}}" id="{{item.goods_id}}" data-url="{{item.image_url}}">
         
-        
-        <view class="goodsPic">
+        <swiper indicator-dots="true" autoplay="{{autoplay}}" style='height:240px;background-color:#fff;' interval="{{interval}}" duration="{{duration}}" class="swiper-box" id="top">
+          <block wx:for="{{item.imgList}}" wx:for-item="item2" wx:for-index="index2">
+            <swiper-item>
+              <image class="slide-image" src="{{item2.imgurl}}" bindload="cusImageLoad" style="width:100%;height:300px;" />
+            </swiper-item>
+          </block>
+        </swiper>
+        <!-- <view class="goodsPic">
           <image src="{{item.image_url}}" />
           
-        </view>
+        </view> -->
 
         <view class="goodsInfor">
           <view class="item-title">

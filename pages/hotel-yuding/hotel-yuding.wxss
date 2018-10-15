@@ -502,13 +502,16 @@ em, i {
   font-size: 34rpx;
 }
 .footer-box .now-buy{
-  text-align: center;
-  height: 100%;
-  width: 250rpx;
-  line-height: 100rpx;
-  background-color: #60a411;
+  text-align:center;
+  width:250rpx;
+  background-color:#60a411;
   color:#fff;
-  font-size: 34rpx;
+  font-size:34rpx;
+  margin:5px;
+  height:45px;
+  line-height:45px;
+  border-radius:5px;
+  padding: 0 15px;
 }
 
 .date-select {
