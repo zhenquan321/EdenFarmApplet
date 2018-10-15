@@ -9,6 +9,45 @@ page {
   min-height: 100%;
   background-color: #f2f2f2;
 }
+.tuan_goods_cx{
+  margin-top: -5px;
+}
+.biaoqian{
+ border:1px solid #999;
+padding:1px 7px!important;
+border-radius:3px;
+font-size:10px;
+margin-right:6px!important;
+background-color:#999;
+color:#fff;
+
+}
+.active{
+  border-color:#ff6850;
+  color: #fff!important;
+  background-color:#ff6850!important;
+  
+}
+.tuan_goods_desc{
+  font-size:12px;
+  margin-top: 5px;
+  color:#666;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.goods-pingfen{
+  float: right;
+  color:rgb(216, 133, 25)!important;
+  font-size:10px;
+  margin-top:2px;
+  border:1px solid rgb(216, 133, 25);
+  padding:2px 8px;
+  border-radius:20px;
+
+}
 
 .p {
   display: inline;
@@ -969,7 +1008,7 @@ sub-image {
   margin-top: 120rpx;
 }
 .item-title{
-min-height: 140rpx;
+min-height: 150rpx;
 }
 
 .item-price {
@@ -982,8 +1021,8 @@ min-height: 140rpx;
 .order{
 
   position:absolute;
-	bottom: 15%;
-	right:5%;
+	bottom: 9%;
+	right:2%;
 	font-size:30rpx;
 	color:#fff;
 	width: 140rpx;

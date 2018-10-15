@@ -18,6 +18,7 @@ Page({
     paytype: 0,
     quantity: 1,
     items: [
+      { name: '1', value: '伊甸卡' },
       { name: '0', value: '微信', checked: 'true' },
     ]
     // text:"这是一个页面"
@@ -33,6 +34,7 @@ Page({
       phone: options.phone,
     })
     this.goodsDetail(options.goods_id);
+  
 
     /* var cart = {};
      var shopCarInfoMem = wx.getStorageSync('BuyNowInfo');
@@ -88,13 +90,60 @@ Page({
 
   radioChange: function (e) {
     console.log(e);
-    this.getCartsDetail(e.detail.value);
+    // this.getCartsDetail(e.detail.value);  //查询折扣价
     this.setData({
       isshow: true,
       paytype: e.detail.value,
     })
 
   },
+  getCartsDetail: function (iscard) {
+    var that = this;
+    //获取每个商品对用户的价格--折扣卡的存在
+    var url = baseApiUrl + "/Api/Weuser/carts_detail/token/" + this.token;
+    var carts = [];
+    var data = {
+      "address_id": "",
+      "carts": this.data.cartinfo,
+      'quantity': this.quantity,
+      "express_fee": this.express_fee,
+      'amount': 19,
+      'total': 39,
+      'type': iscard,
+    };
+
+    console.log(data);
+
+    var carDetail = wxRequest.postRequest(url, data);
+    carDetail.then(response => {
+      if (response.data['result'] == "ok") {
+
+        console.log(response);
+        //获取商品的详细信息
+        var noptions = response.data.data;
+        //  console.log(noptions);
+        that.carts_detail = noptions.carts;
+        that.tamount = parseFloat(noptions.amount);
+        that.tcardfee = parseFloat(noptions.card_fee);
+        that.ttotal = parseFloat(noptions.amount) + parseInt(noptions.express_fee);
+        that.tneedpay = parseFloat(noptions.need_pay) + parseInt(noptions.express_fee);
+        that.setData({
+          isshow: false,
+          'carts': noptions.carts,
+          'amount': parseFloat(noptions.amount),
+          'amount_str': that.tamount.toFixed(2),
+          'quantity': parseInt(noptions.quantity),
+          'express_fee': parseInt(noptions.express_fee),
+          'total': parseFloat(noptions.amount) + parseInt(that.express_fee),
+          'total_str': that.ttotal.toFixed(2),
+          'card_str': that.tcardfee.toFixed(2),
+          'needpay_str': that.tneedpay.toFixed(2),
+          'balance': noptions.balance,
+        });
+      }
+    })
+  },
+
   order_tixinged: function (e) {
     this.setData({ 'order_tixinged': 1 });
   },
@@ -137,7 +186,7 @@ Page({
     getDetail.then(response => {
 
       if (response.data.result == 'ok') {
-        var needpay_str = response.data.goods.market_price  * that.data.daysNum;
+        var needpay_str = response.data.goods.market_price * that.data.daysNum * that.data.quantity;
         WxParse.wxParse('goods_desc', 'html', response.data.goods.goods_desc, that, 5)
         that.setData({
           cate_id: response.data.goods.cate_id,
@@ -175,33 +224,32 @@ Page({
     orderpost.then(response => {
       if (response.data['result'] == "ok") {
         self.order_id = response.data.order_id;
-        if (self.data.paytype == 1) {
-          wx.showModal({
-            title: "是否使用伊甸卡进行支付",
-            success: function (res) {
-              if (res.confirm) {
-                self.yidianpay();
-                // 用户点击了确定 可以调用删除方法了
-              } else if (res.cancel) {
-                self.setData({
-                  isshow: false,
-                  "btn_order_done": false
-                });
-                wx.redirectTo({
-                  url: '../../../pages/order/index/index?type=0',
-                })
-              }
-
-            },
-            fail: function () {
-              return;
-            }
-
-          });
-
+        if (self.data.paytype == 0) {
+          self.wxpay();
+          // wx.showModal({
+          //   title: "是否使用伊甸卡进行支付",
+          //   success: function (res) {
+          //     if (res.confirm) {
+          //       self.yidianpay();
+          //       // 用户点击了确定 可以调用删除方法了
+          //     } else if (res.cancel) {
+          //       // self.setData({
+          //       //   isshow: false,
+          //       //   "btn_order_done": false
+          //       // });
+          //       // wx.redirectTo({
+          //       //   url: '../../../pages/order/index/index?type=0',
+          //       // })
+          //       self.wxpay();
+          //     }
+          //   },
+          //   fail: function () {
+          //     return;
+          //   }
+          // });
         }
         else {
-          self.wxpay();
+          self.yidianpay();
         }
       }
       else if (data['result'] == "fail") {
@@ -255,10 +303,6 @@ Page({
         self.error(data);
       };
     })
-
-
-
-
   },
 
   GetDateStr: function (AddDayCount) {

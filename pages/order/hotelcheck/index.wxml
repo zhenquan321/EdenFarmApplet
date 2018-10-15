@@ -20,7 +20,7 @@
 
 <view class="goods-info">
   <view class="row-box" >
-    <view class="row-label">订单人</view>
+    <view class="row-label">联系人</view>
     <view class="right-text">{{userName}}</view>
   </view>
   <view class="row-box" >

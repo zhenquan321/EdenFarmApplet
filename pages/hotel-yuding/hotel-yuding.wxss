@@ -12,8 +12,20 @@
 
 .goods-info {
     position: relative;
-    padding: 8px 0;
-    text-align: center;
+    padding: 10px 20px;
+    text-align: left;
+}
+.biaoqian{
+  border:1px solid #ccc;
+  padding:1px 7px!important;
+  border-radius:10px;
+  font-size:10px;
+  margin-right:6px!important;
+
+}
+.active{
+  border-color:#ff6850;
+  color: #ff6850!important;
 }
 
 .goods-white {
@@ -21,12 +33,13 @@
 }
 
 .goods-info .goods-name {
-    padding: 0 15px;
-    font-size: 18px;
-    height: auto;
-    color: #343434;
-    line-height: 22px;
-    text-align: center;
+    padding:5px 0px;
+    font-size:18px;
+    height:auto;
+    color:#343434;
+    line-height:22px;
+    text-align:left;
+    font-weight:600;
 }
 
 .goods-info .tuan_goods_cx {
@@ -42,12 +55,16 @@
     vertical-align: baseline;
     color: #666;
 }
-
+.goods-info .goods-pingfen{
+  float: right;
+  color: rgb(216, 133, 25)!important;
+  font-size: 14px;
+}
 .goods-info .goods_price {
-    margin-top: 10px;
     height: 25px;
     line-height: 25px;
-    text-align: center;
+    text-align: left;
+    margin-top: 4px;
 }
 
 .goods-info .goods_price .red {
@@ -90,16 +107,17 @@
 .goods-info .goods-sold {
     color: #878787;
     font-size: 12px;
-    text-align: center;
+    text-align: left;
 }
 
 .rule-intro {
     color: #878787;
     font-size: 12px;
+    margin:0 -20px;
 }
 
 .goods-info .goods-sold {
-    margin-top: 12px;
+    margin-top: 6px;
     margin-bottom: 9px;
     height: 14px;
     line-height: 14px;
