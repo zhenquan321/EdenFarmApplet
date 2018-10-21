@@ -5,13 +5,14 @@ var baseApiUrl = config.getDomain;
 var wxApi = require('utils/wxApi.js')
 var wxRequest = require('utils/wxRequest.js')
 App({
-  onLaunch: function () {
+  onLaunch: function (options) {
     wx.removeStorageSync('token')
     if (!wx.getStorageSync('token')) {
       this.login(this);
       //this.goLogin();
     }
-
+    console.log("options:",options);
+    wx.setStorageSync("InQuery",options.query)
   },
   share: function (obj) {
     var token = wx.getStorageSync('token');

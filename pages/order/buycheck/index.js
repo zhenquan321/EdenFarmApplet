@@ -167,6 +167,7 @@ Page({
     });
 
     var url = baseApiUrl + "/Api/Weuser/orders_new/token/" + this.token;
+    let table = wx.getStorageSync("InQuery").table||0;
     var data = {
       "address_id": this.data.address.address_id,
       "carts": this.carts_detail,
@@ -176,6 +177,7 @@ Page({
       'need_pay': this.tneedpay,
       "address_id": this.address_id,
       "type": this.data.paytype,
+      "table": table,
     };
 
     var orderpost = wxRequest.postRequest(url, data);
