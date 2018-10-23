@@ -31,6 +31,7 @@ Page({
     canSubmit: false, //  选中规格尺寸时候是否允许加入购物车
     shopCarInfo: {},
     shopType: "addShopCar",//购物类型，加入购物车或立即购买，默认为加入购物车
+    icons: ["/static/images/imgNew/kefu.png","/static/images/imgNew/gouwuce.png"]
   },
 
   //事件处理函数
