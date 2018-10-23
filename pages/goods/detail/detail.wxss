@@ -152,13 +152,13 @@ swiper-item image {
   box-sizing: border-box;
   background:url("/images/imgNew/gouwuce.png") no-repeat center 12rpx;
   background-size: 64rpx auto;
-  margin-right:68rpx;
-
+  margin-right:100rpx;
+  overflow: hidden;
 }
 .footer-box .shop-cart-btn .shop-num{
   position: absolute;
   color:#e64340;
-  left: 70rpx;
+  left: 60rpx;
   top:-20rpx;
 }
 .footer-box .join-shop-cart{

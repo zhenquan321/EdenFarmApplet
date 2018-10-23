@@ -21,7 +21,7 @@ Page({
     mealid: 0,
     roomid: 0,
     roomimage: '',
-
+    icons: ["/static/images/imgNew/kefu.png", "/static/images/imgNew/gouwuce.png"],
     "imageWidth": 0,
     "imageheight": 0
   },
