@@ -15,6 +15,8 @@ Page({
     'order_tixinged': 0,
     icons: icons,
     paytype: 0,
+    checkintime: '',
+    leavetime: '',
     icons:icons,
     items: [
       { name: '1', value: '伊甸卡' },
@@ -228,6 +230,12 @@ Page({
     } else {
       //console.log('接口获取数据错误！！！');
     }
+  },
+  calendarChoose: function () {
+    //  url: '../hotel-calendar/calendar?sid='+ e.currentTarget.id
+    wx.navigateTo({
+      url: '../hotel-calendar/calendar'
+    })
   },
   yidianpay: function () {
     var self = this;

@@ -15,6 +15,8 @@ Page({
     },
     'order_tixinged': 0,
     icons: icons,
+    checkintime: '',
+    leavetime: '',
     paytype: 0,
     quantity: 1,
     items: [
@@ -87,7 +89,12 @@ Page({
       }
     });
   },
-
+  calendarChoose: function () {
+    //  url: '../hotel-calendar/calendar?sid='+ e.currentTarget.id
+    wx.navigateTo({
+      url: '../../hotel-calendar/calendar'
+    })
+  },
   radioChange: function (e) {
     console.log(e);
     // this.getCartsDetail(e.detail.value);  //查询折扣价

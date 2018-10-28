@@ -47,9 +47,8 @@ Page({
         icon: '/static/images/imgNew/icon2.png',
         navname: '伊甸套餐',
         _index: 2,
-        cate_id: 17,
+        cate_id: 8,
       },
-
     ],
   },
 

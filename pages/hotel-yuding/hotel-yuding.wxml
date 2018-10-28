@@ -38,39 +38,13 @@
 
       <view class="goods-sold div">累计销量：{{goods.sell_count
         < 10000 ? goods.sell_count : "10000+"}}件 </view>
-
           <view class="rule-intro div">
           </view>
-
-
-
-
-
-          <!--底部购买菜单-->
-          <view class="footer-box">
-            <view class="contact">
-              <contact-button style="opacity:0;position:absolute;" type="default-dark" session-from="weapp" size="34"></contact-button>
-              <image style="width: 44rpx; height: 44rpx;position:absolute;z-index:1;top:16rpx" mode="{{item.mode}}" src="{{icons[0]}}"></image>
-              客服
-            </view>
-            <view class="shop-cart-btn" bindtap="goShopCar">
-              <view class="shop-num">({{shopNum}})</view>
-               <image style="width: 44rpx; height: 44rpx;position:absolute;z-index:1;top:16rpx" mode="{{item.mode}}" src="{{icons[1]}}"></image>
-              购物车
-            </view>
-            <view class="join-shop-cart" wx:if="{{cate_id!=2}}" bindtap="toAddShopCar">加入购物车</view>
-            <view class="now-buy" style="width:{{cate_id==2 ? '500rpx' :'250rpx'}}" bindtap="buyNow">
-              <view style='float:left'>
-                  <view style='font-size:12px;' class='span'>￥</view>
-              {{goods.market_price}}
-              </view>
-              <view style='float:right'>立即预定</view>
-            </view>
-          </view>
+        
 
       </view>
     </view>
-    <view class="date-select flex" bindtap="calendarChoose" hidden='{{show_calendar}}'>
+    <!-- <view class="date-select flex" bindtap="calendarChoose" hidden='{{show_calendar}}'>
       <view class="stay-start gridYr sub">
         <view class="grey">
           入住
@@ -90,10 +64,10 @@
       <view class="stay-date gridFourCirle grey">
         共 {{daysNum}} 晚
       </view>
-    </view>
+    </view> -->
 
 
-    <view class="rule-intro div">
+    <!-- <view class="rule-intro div">
     </view>
     <view class="input">
       <view class="line">
@@ -123,10 +97,30 @@
           <input class="theinput" type="number" name="phone" placeholder="请输入手机号" bindinput="phoneInput" placeholder-style="font-size:30rpx" />
         </view>
       </view>
-    </view>
+    </view> -->
 
 
-    <view class="rule-intro div">
+    <view class="iconBody">
+      <view class='div iconCard'>
+        <view class='div iconImg'>
+          <image class="icon" src="{{icons[2]}}"></image>
+        </view>
+        <view class='div iconImgMs'>
+          <view class='H4'>一室一卫</view>
+          <view class='H5'>酒店标准间/24㎡</view>
+          <view class='H5'>干净卫生</view>
+        </view>
+      </view>
+       <view class='div iconCard'>
+        <view class='div iconImg'>
+          <image class="icon" src="{{icons[3]}}"></image>
+        </view>
+        <view class='div iconImgMs'>
+          <view class='H4'>宜住2人1床</view>
+          <view class='H5'>大床（1.5*2m）1张</view>
+          <view class='H5'>可加床</view>
+        </view>
+      </view>
     </view>
 
     <view class="image-text goods-white">
@@ -136,3 +130,26 @@
       <template is="wxParse" data="{{wxParseData:goods_desc.nodes}}" />
     </view>
   </view>
+
+
+<!--底部购买菜单-->
+<view class="footer-box">
+  <view class="contact">
+    <contact-button style="opacity:0;position:absolute;" type="default-dark" session-from="weapp" size="34"></contact-button>
+    <image style="width: 44rpx; height: 44rpx;position:absolute;z-index:1;top:16rpx" mode="{{item.mode}}" src="{{icons[0]}}"></image>
+    客服
+  </view>
+  <view class="shop-cart-btn" bindtap="goShopCar">
+    <view class="shop-num">({{shopNum}})</view>
+      <image style="width: 44rpx; height: 44rpx;position:absolute;z-index:1;top:16rpx" mode="{{item.mode}}" src="{{icons[1]}}"></image>
+    购物车
+  </view>
+  <view class="join-shop-cart" wx:if="{{cate_id!=2}}" bindtap="toAddShopCar">加入购物车</view>
+  <view class="now-buy" style="width:{{cate_id==2 ? '500rpx' :'250rpx'}}" bindtap="buyNow">
+    <view style='float:left'>
+        <view style='font-size:12px;' class='span'>￥</view>
+    {{goods.market_price}}
+    </view>
+    <view style='float:right'>立即预定</view>
+  </view>
+</view>

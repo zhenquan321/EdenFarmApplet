@@ -1,5 +1,5 @@
 <view class="goods-list">
-  <view class="list-title">客房列表</view>
+  <!-- <view class="list-title">客房列表</view> -->
     <view class="a-goods">
       <view class="img-box">
         <image src="{{url}}" class="img" />
@@ -17,6 +17,60 @@
     </view>
 </view>
 
+ <view class="date-select flex" bindtap="calendarChoose" hidden='{{show_calendar}}'>
+      <view class="stay-start gridYr sub">
+        <view class="grey">
+          入住
+        </view>
+        <view class="stay-time green">
+          {{checkintime}}
+        </view>
+      </view>
+      <view class="stay-end sub">
+        <view class="grey">
+          离店
+        </view>
+        <view class="stay-time green">
+          {{leavetime}}
+        </view>
+      </view>
+      <view class="stay-date gridFourCirle grey">
+        共 {{daysNum}} 晚
+      </view>
+    </view>
+
+
+  <view class="rule-intro div">
+    </view>
+    <view class="input">
+      <view class="line">
+        <view class="line-labe">
+          <text>房间数</text>
+        </view>
+        :
+        <view>
+          <input class="theinput" type="number" name="num" placeholder="请输入成人房客人数" bindinput="inputquantity" placeholder-style="font-size:30rpx"/>
+        </view>
+      </view>
+      <view class="line">
+        <view class="line-labe">
+          <text>联系人</text>
+        </view>
+        :
+        <view>
+          <input class="theinput"  name="userName" placeholder="请输入您的姓名" bindinput="userNameInput" placeholder-style="font-size:30rpx"/>
+        </view>
+      </view>
+      <view class="line">
+        <view class="line-labe">
+          <text>手机号</text>
+        </view>
+        :
+        <view>
+          <input class="theinput" type="number" name="phone" placeholder="请输入手机号" bindinput="phoneInput" placeholder-style="font-size:30rpx" />
+        </view>
+      </view>
+    </view> 
 
 <view class="goods-info">
   <view class="row-box" >

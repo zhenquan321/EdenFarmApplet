@@ -145,6 +145,21 @@ Page({
           'needpay_str': that.tneedpay.toFixed(2),
           'balance': noptions.balance,
         });
+      } else if (response.data['result'] == "fail") {
+        wx.showModal({
+          title: '提示',
+          content: '非常抱歉~商品不能和点餐一起下单，需重新下单！',
+          showCancel: false,
+          confirmText: "返回购物车",
+          success(res) {
+            if (res.confirm) {
+              wx.navigateBack({ delta: 1 })
+            } else if (res.cancel) {
+
+            }
+          }
+        })
+
       }
 
 

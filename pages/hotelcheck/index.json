@@ -1,1 +1,5 @@
-{}
+{
+  "navigationBarTitleText": "订单填写",
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": false
+}
