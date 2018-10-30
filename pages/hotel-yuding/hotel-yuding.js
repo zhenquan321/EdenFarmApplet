@@ -177,22 +177,22 @@ Page({
 
   buyNow: function () {
     var  that=this;
-    var quantity = that.data.quantity||2;
-    if (quantity == null || quantity == undefined || quantity == '') {
-      getApp().showErrModal('人数不能为空');
-      return;
-    }
+    var quantity = that.data.quantity||"";
+    // if (quantity == null || quantity == undefined || quantity == '') {
+    //   getApp().showErrModal('人数不能为空');
+    //   return;
+    // }
 
-    var userName = that.data.userName||2;
-    if (userName == null || userName == undefined || userName == '') {
-      getApp().showErrModal('名字不能为空');
-      return;
-    }
-    var phone = that.data.phone||2;
-    if (phone == null || phone == undefined || phone == '') {
-      getApp().showErrModal('手机号不能为空');
-      return;
-    }
+    var userName = that.data.userName||"";
+    // if (userName == null || userName == undefined || userName == '') {
+    //   getApp().showErrModal('名字不能为空');
+    //   return;
+    // }
+    var phone = that.data.phone||"";
+    // if (phone == null || phone == undefined || phone == '') {
+    //   getApp().showErrModal('手机号不能为空');
+    //   return;
+    // }
     //组建立即购买信息
     wx.navigateTo({
       url: "/pages/order/hotelcheck/index?goods_id=" + that.data.goods.goods_id + "&quantity=" + quantity + '&userName=' + userName + '&phone=' + phone + "&url=" + that.data.images_url,

@@ -69,12 +69,10 @@ Page({
     that = this;
     var cate_id = app.globalData.catid||1;
     var indexz = app.globalData.indexz||0;
-
-
     this.search_title = '';
     //console.log(3);
     //wx.showNavigationBarLoading();
-    var tcindex = options.tcindex;
+    var tcindex = indexz||options.tcindex;
     var tcid = options.tcid;
     this.setData({ "current_index": indexz });
     this.cate_id=1;
@@ -297,6 +295,11 @@ Page({
       "success": function (data) {
         if (data.result == 'ok') {
           self.goodsList();
+          for (var i = 0; i < data.cates.length; i++) {
+            if (data.cates[i].cate_name == '会员卡' ||data.cates[i].cate_name != '每季新菜'){
+              data.cates.splice(i, 1);
+            }
+          }
           self.setData({
             "nc_cates": data.cates
           });
@@ -380,7 +383,7 @@ Page({
     var id = e.currentTarget.dataset.id;
     var that = this;
     var data = {};
-    data[id] = WxAutoImage.wxAutoImageCal(e);
+  //  data[id] = WxAutoImage.wxAutoImageCal(e);
     that.setData(data);
   },
   cusImageGoods: function (e) {

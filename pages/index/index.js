@@ -39,14 +39,14 @@ Page({
         url: '/pages/categories/categories',
         icon: '/static/images/imgNew/icon3.png',
         navname: '伊甸客房',
-        _index: 3,
+        _index: 2,
         cate_id: 2,
       },
       {
         url: '/pages/categories/categories',
         icon: '/static/images/imgNew/icon2.png',
-        navname: '伊甸套餐',
-        _index: 2,
+        navname: '促销套餐',
+        _index: 3,
         cate_id: 8,
       },
     ],
@@ -229,7 +229,9 @@ Page({
     var indexz = event.currentTarget.dataset.indexz;
     console.log(catid, indexz);
     app.globalData.catid = catid;//设置全局变量(app已经定义 var app=getApp())
-    app.globalData.indexz = catid == 2 ? 4:indexz;//设置全局变量(app已经定义 var app=getApp())
+    // app.globalData.indexz = catid == 2 ? 4:indexz;//设置全局变量(app已经定义 var app=getApp())
+    app.globalData.indexz = indexz;//设置全局变量(app已经定义 var app=getApp())
+
     console.log(app.globalData.indexz);
     wx.switchTab({
       url: '../categories/categories'

@@ -18,6 +18,9 @@ Page({
     checkintime: '',
     leavetime: '',
     paytype: 0,
+    iconsList:[
+      "/static/images/jiantou.png",
+    ],
     quantity: 1,
     items: [
       { name: '1', value: '伊甸卡' },
@@ -78,6 +81,7 @@ Page({
 
     //console.log(options);
     // 页面初始化 options为页面跳转所带来的参数
+    
   },
   doneOrderBanner: function () {
     var url = baseApiUrl + "/Api/Project/shippingBanner";
@@ -203,12 +207,35 @@ Page({
           needpay_str: needpay_str,
           isshow: false,
         });
-
-
+        setInterval(() => {
+          this.needpayFun(response.data.goods);
+        }, 1000)
       }
     })
   },
+  needpayFun:function(data){
+    var needpay_str = data.market_price * this.data.daysNum * this.data.quantity;
+    this.setData({
+      needpay_str: needpay_str,
+    });
+  },
+  
   btnOrderDone: function (e) {
+    var quantity = this.data.quantity
+    if (quantity == null || quantity == undefined || quantity == '') {
+      getApp().showErrModal('房间数不能为空');
+      return;
+    }
+    var userName = this.data.userName;
+    if (userName == null || userName == undefined || userName == '') {
+      getApp().showErrModal('名字不能为空');
+      return;
+    }
+    var phone = this.data.phone
+    if (phone == null || phone == undefined || phone == '') {
+      getApp().showErrModal('手机号不能为空');
+      return;
+    }
     var self = this;
     if (this.data.btn_order_done) return true;
     var self = this;
@@ -382,6 +409,21 @@ Page({
     })
   },
 
+  inputquantity: function (e) {
+    this.setData({
+      quantity: e.detail.value
+    });
+  },
+  userNameInput: function (e) {
+    this.setData({
+      userName: e.detail.value
+    });
+  },
+  phoneInput: function (e) {
+    this.setData({
+      phone: e.detail.value
+    });
+  },
   errorGo: function (e) {
     wx.redirectTo({
       url: "../index/index"

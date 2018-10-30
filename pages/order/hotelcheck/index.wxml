@@ -10,8 +10,13 @@
           <view class="goods-price">¥ {{goods.market_price}}</view>
         </view>
         <view class="arow">
-          <view class="goods-label">{{item.label}}</view>
-          <view class="goods-num">x {{quantity}}</view>
+          <view class="goods-label">
+            <view class='span'>一室一卫</view>
+            <view class='span'>大床</view>
+            <view class='span'>宜住2人</view>
+            <view class='span'>可加床</view>
+          </view>
+          <!-- <view class="goods-num">x {{quantity}}</view> -->
         </view>
       </view>
     </view>
@@ -34,46 +39,50 @@
           {{leavetime}}
         </view>
       </view>
+      <view class="stay-end sub">
+        
+      </view>
       <view class="stay-date gridFourCirle grey">
-        共 {{daysNum}} 晚
+        共 {{daysNum}} 晚  <image style="width: 28rpx; height: 32rpx;position:absolute;z-index:1;top:8rpx;right:-16rpx;" mode="{{item.mode}}" src="{{iconsList[0]}}"></image>
       </view>
     </view>
 
 
-  <view class="rule-intro div">
-    </view>
+  <view class="rule-intro div"> </view>
     <view class="input">
       <view class="line">
         <view class="line-labe">
-          <text>房间数</text>
+          <text>房间数 :</text>
         </view>
-        :
+       
         <view>
-          <input class="theinput" type="number" name="num" placeholder="请输入成人房客人数" bindinput="inputquantity" placeholder-style="font-size:30rpx"/>
+          <input class="theinput" type="number" name="num" placeholder="请输入预定房间数" bindinput="inputquantity" placeholder-style="font-size:30rpx"/>
         </view>
       </view>
       <view class="line">
         <view class="line-labe">
-          <text>联系人</text>
+          <text>联系人 :</text>
         </view>
-        :
+        
         <view>
           <input class="theinput"  name="userName" placeholder="请输入您的姓名" bindinput="userNameInput" placeholder-style="font-size:30rpx"/>
         </view>
       </view>
-      <view class="line">
+      <view class="line" style='border-bottom:0'>
         <view class="line-labe">
-          <text>手机号</text>
+          <text>手机号 :</text>
         </view>
-        :
+       
         <view>
           <input class="theinput" type="number" name="phone" placeholder="请输入手机号" bindinput="phoneInput" placeholder-style="font-size:30rpx" />
         </view>
       </view>
     </view> 
+  <view class="rule-intro div"> </view>
+ 
 
 <view class="goods-info">
-  <view class="row-box" >
+  <!-- <view class="row-box" >
     <view class="row-label">联系人</view>
     <view class="right-text">{{userName}}</view>
   </view>
@@ -84,7 +93,7 @@
     <view class="row-box" >
     <view class="row-label">天数</view>
     <view class="right-text">{{daysNum}}晚</view>
-  </view>
+  </view> -->
  <!-- <view class="row-box">
     <view class="row-label">伊甸卡余额</view>
     <view class="right-text"> ¥ {{balance}}</view>

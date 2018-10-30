@@ -150,7 +150,7 @@ page {
 .goods-info{
     background-color: #fff;
     margin-bottom: 120rpx;
-    padding-bottom: 24rpx;
+    padding-bottom: 10rpx;
 }
 .goods-info .row-box{
     display: flex;
@@ -208,6 +208,8 @@ page {
   font-size: 14px;
   display: flex;
   justify-content: space-between;
+  padding:0 20rpx;
+
 }
 
 .date-select:active {
@@ -228,4 +230,76 @@ page {
 
 .stay-start, .stay-end {
   padding: 20rpx 40rpx 20rpx 40rpx;
+}
+
+.rule-intro {
+    background-color: #eceded;
+    padding: 1rpx 0;
+    line-height: 15px;
+    height: 20rpx;
+}
+
+.input{
+  display: flex;
+  background:#fff;
+  justify-content: center;
+  flex-direction: column;
+  padding: 4rpx 20rpx;
+}
+
+.line{
+  display: flex;
+  justify-content: flex-start;
+  padding:20rpx 10rpx 16rpx;
+  border-bottom: 2rpx solid #ccc;
+}
+
+.line-labe{
+  width:150rpx;
+  font-size: 30rpx;
+  line-height:53rpx;
+}
+.theinput{
+  padding:0rpx 20rpx;
+
+}
+
+.goods-label .span{
+  margin-right:20rpx;
+  padding-right:20rpx;
+  border-right:1px solid #ccc;
+  color: #ccc;
+}
+.goods-label:last-child{
+  border: 0;
+}
+.a-goods .text-box .arow .goods-name {
+  width:360rpx;
+  font-size:40rpx;
+  height:74rpx;
+  color:#444;
+  line-height:1;
+  overflow:hidden;
+}
+.flex>.sub{
+  text-align:left;
+}
+.flex>.sub .grey{
+  font-size:24rpx;
+  color:#888;
+  padding-top:4rpx;
+}
+
+.flex>.sub .stay-time{
+  font-size:34rpx;
+  color:#444;
+}
+.stay-date{
+  right:20rpx;
+  left:auto;
+  color:#777;
+
+}
+.stay-start, .stay-end {
+  padding:20rpx;
 }

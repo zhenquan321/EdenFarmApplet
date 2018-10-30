@@ -94,7 +94,7 @@
   <view class="kongbai"></view>
 
   <view class="qihuan">
-    <navigator url="pages/index/index">
+    <navigator openType="switchTab" url="../../pages/member/member">
       <image src="/static/images/hotel/qh.png"></image>
       <text>切换到个人中心</text>
     </navigator>
