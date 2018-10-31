@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    icons: ["/static/images/imgNew/payIcon1.png", "/static/images/imgNew/beijing.png"],
   },
 
   /**
