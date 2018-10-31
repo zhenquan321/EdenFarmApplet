@@ -311,7 +311,7 @@ page {
     display: block;
     text-align: center;
     border-radius: 100%;
-    background-color: #1AAD19;
+    background-color: #fff;
 }
 
 .cancel_icon {
@@ -329,3 +329,11 @@ page {
     overflow: scroll;
 }
 
+.express_html{
+  background-color:rgba(0, 0, 0, 0.6);
+  width:100%;
+  height:100%;
+  position:fixed;
+  z-index:111111;
+
+}
