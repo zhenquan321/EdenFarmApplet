@@ -23,7 +23,9 @@
     "pages/shop/manage",
     "pages/shop/order/index",
     "pages/shop/order/detail",
-    "static/images/img"
+    "static/images/img",
+    "pages/userCenter/Recharge",
+    "pages/userCenter/Recharge/Recharge"
   ],
   "window": {
     "backgroundTextStyle": "light",

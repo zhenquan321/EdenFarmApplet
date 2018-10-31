@@ -296,13 +296,14 @@ Page({
         if (data.result == 'ok') {
           self.goodsList();
           for (var i = 0; i < data.cates.length; i++) {
-            if (data.cates[i].cate_name == '会员卡' ||data.cates[i].cate_name != '每季新菜'){
+            if (data.cates[i].cate_name == '会员卡' ||data.cates[i].cate_name == '每季新菜'){
               data.cates.splice(i, 1);
             }
           }
           self.setData({
             "nc_cates": data.cates
           });
+          console.log(data.cates);
         }
       }
     });
