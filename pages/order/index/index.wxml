@@ -7,7 +7,7 @@
                     <view class="div express_header">物流信息 </view>
                     <view class="div right_pos">
                         <view class="div i">
-                            <image src="https://home.ydnc.com.cn/images/close_1.png" class="img cancel_icon" bindtap="close_express"></image>
+                            <icon color="#1AAD19" size="30" type="clear"></icon>
                         </view>
                         </view>
                          <view class="div shipper" wx:if="{{shipping_info.tracking_number}}">运单号：<view class="span tracking_number">
@@ -31,9 +31,6 @@
                     </view>
                     <image class="express_loading" wx-if="{{express.loading}}" src="https://home.ydnc.com.cn/images/loading_eb0d43.gif"></image>
                 </view>
-
-                
-                
                 <view class="div dialog_back"></view>
             </view>
             <view class="div nav_fixed">
