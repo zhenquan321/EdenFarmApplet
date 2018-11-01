@@ -1,1 +1,78 @@
 /* pages/userCenter/Recharge/Recharge.wxss */
+.title{
+  font-size: 28rpx;
+  color: #777;
+  margin:20rpx 30rpx;
+  font-weight:600;
+
+}
+.title .shugang{
+  display:inline-block;
+  height:32rpx;
+  border-right:6rpx solid #1aad19;
+  margin-right:10px;
+  position:relative;
+  top:3px;
+  font-weight: 600;
+}
+
+.yueCard{
+  box-shadow:0 2rpx 4rpx #ccc;
+  margin:30rpx;
+  padding:30rpx;
+  border-radius:5px;
+  background-color:#ecebeb;
+  padding-right: 50rpx;
+  position: relative;
+}
+.czimg{
+  display:inline-block;
+  width:86rpx;
+  height:86rpx;
+  background-color:rgb(101, 180, 91);
+  border-radius:50%;
+  padding:16rpx;
+  border:10rpx solid rgb(155, 228, 152);
+
+}
+.yeNum{
+  float:right;
+  color:#777;
+  padding-top:21px;
+
+}
+.advimg{
+  width:80rpx;
+  height:80rpx;
+
+}
+.beijingImg{
+  width:690rpx;
+  height:100%;
+  position:absolute;
+  z-index:-1;
+
+
+}
+.inputC{
+  border:4rpx solid #64ab5b;
+  border-radius:50rpx;
+  margin:30rpx;
+  height:60rpx;
+  padding:6rpx 40rpx;
+  font-size:24rpx;
+  color:#666;
+
+
+}
+
+.buttonGM{
+  background-color:#64ab5b;
+  color:#fff;
+  font-size:30rpx;
+  text-align:center;
+  margin:30rpx;
+  border-radius:60rpx;
+  padding:18rpx;
+
+}
