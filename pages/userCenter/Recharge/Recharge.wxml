@@ -3,25 +3,39 @@
   <!-- <view class="title">
     <view class='shugang'></view>我的账户
   </view> -->
+ 
+  <view class="title ">
+    <view class='shugang'></view>伊甸余额
+  </view>
   <view class='yueCard'>
     <!-- <image bindload="imagesHeight" class="beijingImg" data-type="bannerheight" mode="widthFix" src="{{icons[1]}}"></image> -->
     <view class='czimg'>
         <image bindload="imagesHeight" class="advimg" data-type="bannerheight" mode="widthFix" src="{{icons[0]}}"></image>
     </view>
-    <view class='yeNum'>余额：￥115.52</view>
+    <view class='yeNum'>￥{{balance}}</view>
   </view>
 
-  <view class="title">
-    <view class='shugang'></view>充值
+  <view class="title mt60">
+    <view class='shugang'></view>立即充值
   </view>
   <view class="inputCard">
     <input class='input inputC' placeholder='请输入充值金额'></input>
   </view>
   <view class='button buttonGM'>立即充值</view>
-  <view class="title">
-    <view class='shugang'></view>购买会员卡
+
+ <view class="title mt60">
+    <view class='shugang'></view>会员卡
   </view>
   <view class='huiYuanCardList'>
-    <view class='huiYuanCard'></view>
+    <view class='huiYuanCard'>
+      <swiper indicator-dots="true" autoplay="true" style='height:240px;background-color:#fff;' interval="3000" duration="500" class="swipers swiper-box" vertical="true" circular="true" id="top">
+        <block wx:for="{{CardList}}" wx:for-item="Card" wx:for-index="index2">
+          <swiper-item>
+            <image class="slide-image" src="{{Card.imgList[0].imgurl}}" bindload="cusImageLoad" style="width:100%;height:175px;" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+      <view class='WZMS'>购买会员会有巨额优惠哦~</view>
   </view>
 </view>

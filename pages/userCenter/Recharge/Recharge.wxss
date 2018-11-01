@@ -6,6 +6,10 @@
   font-weight:600;
 
 }
+.mt60{
+  margin-top:40rpx;
+
+}
 .title .shugang{
   display:inline-block;
   height:32rpx;
@@ -22,7 +26,7 @@
   padding:30rpx;
   border-radius:5px;
   background-color:#ecebeb;
-  padding-right: 50rpx;
+  padding-right: 30rpx;
   position: relative;
 }
 .czimg{
@@ -37,8 +41,15 @@
 }
 .yeNum{
   float:right;
-  color:#777;
+  color:rgb(216, 126, 42);
   padding-top:21px;
+  display:inline-block;
+  border:2px solid #aaaa;
+  line-height:40rpx;
+  padding:5px 15px;
+  border-radius:50rpx;
+  background-color:#fcfcfc;
+  margin-top:33rpx;
 
 }
 .advimg{
@@ -75,4 +86,30 @@
   border-radius:60rpx;
   padding:18rpx;
 
+}
+
+.huiYuanCard{
+  width:690rpx;
+  margin:20rpx 30rpx;
+  border-radius:10rpx;
+  overflow: hidden;
+  box-shadow: 1px 1px 5px #ccc; 
+  border:1px solid #c6ccc4;
+
+}
+.swipers{
+height:175px!important;
+border-radius:14rpx;
+overflow:hidden;
+
+}
+.Cardimg{
+  width: 100%;
+  height: 100%;
+}
+
+.WZMS{
+  text-align:center;
+  color:#777;
+  font-size:16px;
 }
