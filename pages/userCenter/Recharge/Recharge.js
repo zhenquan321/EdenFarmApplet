@@ -2,6 +2,8 @@
 var app = getApp(),
   wxRequest = app.requirejs('wxRequest');
 var util = require('../../../utils/tools.js');
+import config from '../../../utils/config.js';
+var baseApiUrl = config.getDomain;
 Page({
 
   /**
@@ -11,7 +13,8 @@ Page({
     icons: ["/static/images/imgNew/payIcon1.png", "/static/images/imgNew/beijing.png"],
     baseApiUrl:'',
     CardList:[],
-    balance:''
+    balance:'',
+    sel_id:''
   },
   /**
    * 生命周期函数--监听页面加载
@@ -117,7 +120,9 @@ Page({
           }
           this.setData({
             CardList: goods,
+            sel_id: goods[1].goods_id,
           });
+          this.sel_id = goods[1].goods_id;
           console.log(goods);
         } else {
           self.setData({
@@ -130,4 +135,118 @@ Page({
       }
     });
   },
+  //首页分类选择
+  selCard: function (e) {
+    this.sel_id = e.currentTarget.dataset.goodsid;
+    this.setData({
+      sel_id: this.sel_id ,
+    });
+ 
+  },
+
+  gotoDetail: function (e) {
+    console.log(e);
+    var url = e.currentTarget.dataset.url;
+    wx.navigateTo({
+      url: '../../goods/detail/detail?goods_id=' + e.currentTarget.id + '&image=' + url,
+    })
+  },
+
+  /**
+	 * 组建立即购买信息
+	 */
+  btnOrderDone: function (e) {
+    // 加入购物车
+    var self = this;
+    var url = baseApiUrl + "/Api/Weuser/orders?token=" + wx.getStorageSync('token');
+    var data = {
+      goods_id: this.sel_id,
+      quantity: 1,
+    };
+    util.ajax({
+      "url": url,
+      "method": "POST",
+      "data": data,
+      "success": function (data) {
+        if (data['result'] == "ok") {
+          //服务端生成订单成功
+          //  self.setData({
+          //   "btn_order_done" : false
+          // });
+          //微信支付
+          self.order_id = data.order_id;
+          // util.wxpay(self);
+          self.wxpay();
+        } else if (data['result'] == "fail") {
+          self.error(data);
+        } else {
+          var data = { "result": 'fail', "error_info": util.config('error_text')[0] };
+          self.error(data);
+        }
+      }
+    });
+  },
+
+  wxpay: function () {
+    console.log(1);
+    var self = this;
+    var url = baseApiUrl + "/Api/Weuser/wxpay/token/" + wx.getStorageSync('token') + "/order_id/" + this.order_id;
+    util.ajax({
+      "url": url,
+      "method": "GET",
+      "success": function (data) {
+        if (data['result'] == "ok") {
+          wx.requestPayment({
+            'timeStamp': data.param.timeStamp,
+            'nonceStr': data.param.nonceStr,
+            'package': data.param.package,
+            'signType': 'MD5',
+            'paySign': data.param.paySign,
+            'success': function (res) {
+              //console.log(res);
+              self.setData({
+                isshow: false,
+              });
+              wx.showModal({
+                title: '支付成功',
+                content: '支付完成是否确认订单',
+                showCancel: false,
+                success: function () {
+                  wx.redirectTo({
+                    url: '../../pages/order/index/index?type=4',
+                  })
+                },
+                fail: function () {
+                  wx.redirectTo({
+                    url: '../../pages/cart/index/index',
+                  })
+                }
+              })
+            },
+            'fail': function (res) {
+              self.setData({
+                isshow: false,
+              });
+              //console.log(res);
+            },
+            'complete': function (res) {
+              console.log(res);
+              if (res.errMsg == "requestPayment:fail cancel") {
+                self.setData({
+                  isshow: false,
+                });
+              }
+
+            }
+          })
+        } else if (data['result'] == "fail") {
+          self.error(data);
+        } else {
+          var data = { "result": 'fail', "error_info": util.config('error_text')[0], "url": '../orders/orders' };
+          self.error(data);
+        };
+      }
+    });
+  },
+
 })

@@ -5,7 +5,7 @@
 
   <scroll-view class="ch-content recommend_scroll_x_box" scroll-x="true" scroll-left="{{nav_scroll_left}}">
     <block wx:key="item" wx:for="{{cates}}">
-      <view class="ch-tab-item li" wx:if="{{item.cate_name!='会员卡'&&item.cate_name!='每季新菜'}}">
+      <view class="ch-tab-item li" wx:if="{{item.cate_name!='会员卡'&&item.cate_name!='每季新菜'}}"> <!--   -->
         <view class="{{current_index == index ?  'cur-ch-tab' : 'ch-tab'}} span" data-index="{{index}}" data-cate_id="{{item.cate_id}}" bindtap="channelRendered">{{item.cate_name}}</view>
       </view>
     </block>

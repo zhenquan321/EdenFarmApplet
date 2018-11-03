@@ -78,7 +78,7 @@
 }
 
 .buttonGM{
-  background-color:#64ab5b;
+  background-color:#e6a51a;
   color:#fff;
   font-size:30rpx;
   text-align:center;
@@ -112,4 +112,34 @@ overflow:hidden;
   text-align:center;
   color:#777;
   font-size:16px;
+}
+
+.jine{
+  padding-left:20rpx; 
+}
+.miaoshu{
+  padding:0 30rpx;
+  color:#666;
+  font-size:28rpx;
+
+}
+
+.choongzhi{
+  display:inline-block;
+  padding:10rpx 20rpx;
+  border-radius:10rpx;
+  border:1px solid #64ab5b;
+  background-color:#fafafa;
+  color:#64ab5b;
+  font-size:32rpx;
+  margin:10rpx;
+  margin-top:30rpx;
+
+}
+.active{
+ color:#fff;
+background-color:#64ab5b;
+border-color:#64ab5b;
+
+
 }
