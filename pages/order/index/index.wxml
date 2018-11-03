@@ -2,37 +2,7 @@
     <view class="div" ms-controller="root">
             <view class="div all_page" ms-if="confirm_code"></view>
             <!-- <view ms-include-src="'share_coupon.html'" ms-if="confirm_code"></view> -->
-            <view class="div express_html" style="{{expressOpen != 1 ? 'display:none;' : ''}}">
-                <view class="div dialog_content">
-                    <view class="div express_header">物流信息 </view>
-                    <view class="div right_pos">
-                        <view class="div i">
-                            <icon color="#1AAD19" size="30" type="clear"></icon>
-                        </view>
-                        </view>
-                         <view class="div shipper" wx:if="{{shipping_info.tracking_number}}">运单号：<view class="span tracking_number">
-                            {{shipping_info.tracking_number}}
-                        </view>
-                    </view>
-
-                    <view id="express_dialog" class="div express_main" style="overflow: scroll; outline: none;">
-                        <view class="ul express_ui" wx:if="{{shipping_info.traces.length>0}}">
-                            <view class="lili one_expre {{index == 0 ? 'red_color' : ''}}" wx:for="{{shipping_info.traces}}" ms-class="">
-                                        <view class="table" width="100%" height="100%">
-                                            <view class="tr"><view  align="center" valign="middle" class="center_middle td exp_middle">
-                                            <view class="div exp_wrapper"><view class="i fa fa-circle exp_circle"></view></view></view><view  class="td exp_detail"><view class="p">{{item.time}}
-                            </view><view class="p">
-                            <view class="span" wx-if="{{item.address.length > 0}}">[{{item.address}}]</view>
-                            {{item.remark}}
-                            </view></view></view></view></view></view>
-
-                        <view class="div center" wx-if="{{express.error}}">{{express.info}}</view>
-                    
-                    </view>
-                    <image class="express_loading" wx-if="{{express.loading}}" src="https://home.ydnc.com.cn/images/loading_eb0d43.gif"></image>
-                </view>
-                <view class="div dialog_back"></view>
-            </view>
+          
             <view class="div nav_fixed">
             <!--data-status="1" href="#" ms-class="nav_cur: all_status==3" ms-click=statusChange(3)-->
                 <view class="a fixed_nav_item {{all_status == 3 || all_status == undefined ? 'nav_cur' : ''}}" data-all_status="3" bindtap="statusChange">
@@ -106,6 +76,39 @@
                                     </view>
                                     <view class="span coupon_icon" wx:if="order.coupons.length>0"></view>
                                 </view>
+
+                                <view class="div express_html" style="{{expressOpen != order.order_id ? 'display:none;' : ''}}">
+                                    <view class="div ">
+                                        <view class="div express_header">物流信息 </view>
+                                        <view class="div right_pos">
+                                            <!-- <view class="div i">
+                                                <icon color="#1AAD19" size="30" type="clear"></icon>
+                                            </view> -->
+                                            </view>
+                                            <view class="div shipper" wx:if="{{shipping_info.tracking_number}}">运单号：<view class="span tracking_number">
+                                                {{shipping_info.tracking_number}}
+                                            </view>
+                                        </view>
+
+                                        <view id="express_dialog" class="div express_main" style="overflow: scroll; outline: none;">
+                                            <view class="ul express_ui" wx:if="{{shipping_info.traces.length>0}}">
+                                                <view class="lili one_expre {{index == 0 ? 'red_color' : ''}}" wx:for="{{shipping_info.traces}}" ms-class="">
+                                                            <view class="table" width="100%" height="100%">
+                                                                <view class="tr"><view  align="center" valign="middle" class="center_middle td exp_middle">
+                                                                <view class="div exp_wrapper"><view class="i fa fa-circle exp_circle"></view></view></view><view  class="td exp_detail"><view class="p">{{item.time}}
+                                                </view><view class="p">
+                                                <view class="span" wx-if="{{item.address.length > 0}}">[{{item.address}}]</view>
+                                                {{item.remark}}
+                                                </view></view></view></view></view></view>
+
+                                            <view class="div center" wx-if="{{express.error}}">{{express.info}}</view>
+                                        
+                                        </view>
+                                        <image class="express_loading" wx-if="{{express.loading}}" src="https://home.ydnc.com.cn/images/loading_eb0d43.gif"></image>
+                                    </view>
+                                    <view class="div dialog_back"></view>
+                                </view>
+
                                 <view class="div order_opt">
                                     <view class="div " wx:if = "order.pay_status == 2 && order.order_status == 1">
                                         <!--<view class="span order_status" wx:if = "order.lucky_status == '3' || order.lucky_status == '0' ">{{order.order_status_lang}}</view>-->
