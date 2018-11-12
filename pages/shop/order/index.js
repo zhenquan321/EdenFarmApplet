@@ -12,7 +12,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    status: -1,
+    status: 2,
     order_list: [],
     show_no_data_tip: false,
     shoptoken:'',
@@ -46,9 +46,12 @@ Page({
       // 页面初始化 options为页面跳转所带来的参数
       if (options.status != undefined) {
         that.getOrder(options.status);
+        this.setData({
+          status: options.status
+        });
       }
       else {
-        that.getOrder(6);
+        that.getOrder(2);
       }
       
 },
@@ -293,6 +296,41 @@ Page({
       }
     });
   },
+  confirm: function (e) {
+    var page = this;
+    wx.showModal({
+      title: "提示",
+      content: "是否确认订单？",
+      cancelText: "否",
+      confirmText: "是",
+      success: function (res) {
+        if (res.cancel)
+          return true;
+        if (res.confirm) {
+          wx.showLoading({
+            title: "操作中",
+          });
+          let url= baseApiUrl + "/api/admin/confirm";
+          let data = {
+            order_id: e.currentTarget.dataset.id,
+            token: wx.getStorageSync("shoptoken")
+          };
+          var confirm2 = wxRequest.getRequest(url, data);
+          confirm2.then(res => {
+              wx.hideLoading();
+              wx.showToast({
+                title: res.msg,
+              });
+              if (res.code == 0) {
+                page.loadOrderList(2);
+              }
+          })
+        }
+      }
+    });
+  },
+
+  
   orderQrcode:function (e) {
     var page = this;
     var order_list = page.data.order_list;
