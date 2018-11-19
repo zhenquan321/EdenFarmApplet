@@ -319,10 +319,10 @@ Page({
           confirm2.then(res => {
               wx.hideLoading();
               wx.showToast({
-                title: res.msg,
+                title: res.data.msg,
               });
-              if (res.code == 0) {
-                page.loadOrderList(2);
+              if (res.statusCode == 200) {
+                page.getOrder(2);
               }
           })
         }
