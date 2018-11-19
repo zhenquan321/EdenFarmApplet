@@ -329,7 +329,40 @@ Page({
       }
     });
   },
-
+  //发货
+  DeliverGoods: function (e) {
+    var page = this;
+    wx.showModal({
+      title: "提示",
+      content: "是否确认发货？",
+      cancelText: "否",
+      confirmText: "是",
+      success: function (res) {
+        if (res.cancel)
+          return true;
+        if (res.confirm) {
+          wx.showLoading({
+            title: "操作中",
+          });
+          let url = baseApiUrl + "/api/admin/delivery";
+          let data = {
+            order_id: e.currentTarget.dataset.id,
+            token: wx.getStorageSync("shoptoken")
+          };
+          var confirm2 = wxRequest.postRequest(url, data);
+          confirm2.then(res => {
+            wx.hideLoading();
+            wx.showToast({
+              title: res.data.msg,
+            });
+            if (res.statusCode == 200) {
+              page.getOrder(3);
+            }
+          })
+        }
+      }
+    });
+  },
   
   orderQrcode:function (e) {
     var page = this;

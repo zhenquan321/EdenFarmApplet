@@ -142,5 +142,8 @@ page {
   border-radius:6rpx;
   position: absolute;
   right:26rpx;
-
+  top:0;
+}
+.jgCard{
+  position: relative;
 }

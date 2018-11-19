@@ -2,7 +2,7 @@
   <view class="header">
     <view class="hd_main">
       <view class="icon">
-        <navigator url="/pages/shop/store/order/index?type=1">
+        <navigator url="/pages/shop/order/index">
           <view class="image">
             <image src="/static/images/wait_order.png"></image>
             <text wx:if="{{stayok != 0}}" class="tips ">{{stayok}}</text>
