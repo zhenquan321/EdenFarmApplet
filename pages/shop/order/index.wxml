@@ -75,7 +75,7 @@
           </block>
         </block>
         <block wx:elif="{{status==2}}" >
-        合计：￥{{order.goods_amount}}<view class='qrbtn' bindtap='confirm' data-id="{{order.id}}">确认订单</view>  
+        合计：￥{{order.goods_amount}}<view class='qrbtn' bindtap='confirm' data-id="{{order.order_id}}">确认订单</view>  
         </block>
         <block wx:else>合计：￥{{order.goods_amount}}</block>
       </view>

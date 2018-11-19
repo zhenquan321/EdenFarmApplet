@@ -315,7 +315,7 @@ Page({
             order_id: e.currentTarget.dataset.id,
             token: wx.getStorageSync("shoptoken")
           };
-          var confirm2 = wxRequest.getRequest(url, data);
+          var confirm2 = wxRequest.postRequest(url, data);
           confirm2.then(res => {
               wx.hideLoading();
               wx.showToast({
