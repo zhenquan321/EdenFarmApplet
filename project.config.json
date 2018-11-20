@@ -64,9 +64,9 @@
 				},
 				{
 					"id": 5,
-					"name": "dengdan",
-					"pathName": "pages/shop/order/detail",
-					"query": "id=572"
+					"name": "manage",
+					"pathName": "pages/shop/manage",
+					"query": ""
 				},
 				{
 					"id": -1,
