@@ -5,7 +5,7 @@ var Config = {
         'desc' : '优质生活，伊甸护航',
         'path' :　'pages/index/index'
      },
-     "baseApiUrl": "https://home.ydnc.com.cn/",
+     "baseApiUrl": "https://api.ydnc.com.cn/",
     "web" :  {
         "url": "home.ydnc.com.cn",
         "name" : "伊甸农场",
