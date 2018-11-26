@@ -247,8 +247,8 @@ Page({
   }   
   ,
   expressShow : function(e) {
-    this.setData({"expressOpen" : 1,'express' : {loading : true}});
     var order_id = e.currentTarget.dataset.order_id;
+    this.setData({ "expressOpen": order_id,'express' : {loading : true}});
     
     var token = this.token;
     var url = this.baseApiUrl + "Api/Project/express/order_id/" +　order_id;   
@@ -260,7 +260,7 @@ Page({
             if(data['result'] == "ok") {
               self.setData({
                 'express' : {loading : false},
-                "shipping_info" : data.shipping
+                "shipping_info" : order_id
                 });
             } else {
                  

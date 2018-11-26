@@ -134,3 +134,16 @@ page {
     background: #EFEFF4;
     overflow-x: hidden;
 }
+.qrbtn{
+  background-color:rgb(243, 166, 22);
+  display:inline-block;
+  padding:6rpx 16rpx;
+  color:#fff;
+  border-radius:6rpx;
+  position: absolute;
+  right:26rpx;
+  top:0;
+}
+.jgCard{
+  position: relative;
+}

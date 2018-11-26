@@ -1,8 +1,26 @@
 <view class="app">
   <view class="header">
-    <view class="hd_main">
+    <view class="jinEnCard">
+      <view class='JETitle'>今天付款金额(元)</view>
+      <view class='JENum'>34411.2</view>
+    </view>
+    <view class='XMList'>
+      <view class='xmCard'>
+        <view>待确认订单</view>
+        <view>34</view>
+      </view>
+      <view class='xmCard'>
+        <view>待发货订单</view>
+        <view>34</view>
+      </view>
+      <view class='xmCard'>
+        <view>付款件数</view>
+        <view>34</view>
+      </view>
+    </view>
+    <!-- <view class="hd_main">
       <view class="icon">
-        <navigator url="/pages/shop/store/order/index?type=1">
+        <navigator url="/pages/shop/order/index">
           <view class="image">
             <image src="/static/images/wait_order.png"></image>
             <text wx:if="{{stayok != 0}}" class="tips ">{{stayok}}</text>
@@ -23,7 +41,6 @@
         <navigator url="/pages/hotel/store/order/index?type=3">
           <view class="image">
             <image src="/static/images/qx_order.png"></image>
-           
           </view>
           <view class="text">取消订单</view>
         </navigator>
@@ -37,57 +54,58 @@
           <view class="text">结算管理</view>
         </navigator>
       </view>
-    </view>
+    </view> -->
   </view>
 
   <view class="action">
 
     <view class="col">
       <navigator url="/pages/shop/order/index">
-        <image class="tubiao" src="/static/images/order_on.png"></image>
-        <text>订单管理</text>
-        <image class="jiantou" src="/static/images/jiantou.png"></image>
+        <image class="tubiao" src="/static/images/manage/dingdanGl.png"></image>
+        <text class='textMs'>订单管理</text>
       </navigator>
     </view>
     <view class="col">
       <navigator url="/pages/hotel/store/fang/room">
-      <image class="tubiao" src="/static/images/fangxing.png"></image>
-      <text>房间管理</text>
-      <image class="jiantou" src="/static/images/jiantou.png"></image>
+      <view class='imgCardIcon'>
+        <image class="tubiao" src="/static/images/manage/fangjianGl3.png"></image>
+      </view>
+      <text class='textMs'>房间管理</text>
       </navigator>
     </view>
-
-
     <view class="col">
       <navigator url="/pages/hotel/store/fang/price">
-      <image class="tubiao" src="/static/images/fangjia.png"></image>
-      <text>房价管理</text>
-      <image class="jiantou" src="/static/images/jiantou.png"></image>
+      <image class="tubiao" src="/static/images/manage/fangjiaGl2.png"></image>
+      <text class='textMs'>房价管理</text>
       </navigator>
     </view>
 
     <view class="col">
-        <navigator url="/pages/hotel/store/info/index">
-          <image class="tubiao" src="/static/images/jiesao.png"></image>
-          <text>资料管理</text>
-          <image class="jiantou" src="/img/hotel/jiantou.png"></image>
+      <navigator url="/pages/hotel/store/info/index">
+        <view class='imgCardIcon2'>
+          <image class="tubiao" src="/static/images/manage/ziliaoGl.png"></image>
+        </view>
+        <text class='textMs'>资料管理</text>
+     
+          
         </navigator>
     </view>
 
     <view class="col">
       <navigator url="/pages/hotel/store/comment/index">
-        <image class="tubiao" src="/static/images/dianping.png"></image>
-        <text>评价管理</text>
-        <image class="jiantou" src="/static/images/jiantou.png"></image>
+        <image class="tubiao" src="/static/images/manage/pingjiaGl.png"></image>
+        <text class='textMs'>评价管理</text>
       </navigator>
 
     </view>
 
 
     <view bindtap="tel" class="col">
-      <image class="tubiao" src="/static/images/kefu.png"></image>
-      <text>联系客服</text>
-      <image class="jiantou" src="/static/images/jiantou.png"></image>
+        <view class='imgCardIcon3'>
+          <image class="tubiao" src="/static/images/manage/lianxiKf.png"></image>
+        </view>
+      
+      <text class='textMs'>联系客服</text>
     </view>
   </view>
 

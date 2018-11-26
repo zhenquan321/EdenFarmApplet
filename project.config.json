@@ -10,7 +10,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.2.2",
 	"appid": "wx388b6e481a0258c3",
-	"projectname": "EdenFarmApplet",
+	"projectname": "Eden",
 	"isGameTourist": false,
 	"condition": {
 		"search": {
@@ -64,9 +64,9 @@
 				},
 				{
 					"id": 5,
-					"name": "dengdan",
-					"pathName": "pages/shop/order/detail",
-					"query": "id=572"
+					"name": "manage",
+					"pathName": "pages/shop/manage",
+					"query": ""
 				},
 				{
 					"id": -1,

@@ -5,6 +5,7 @@ Page({
   data: {
     "URL": 4,
     "userInfo": util.config('userInfo'),
+    iconsNew:[],
     icons:icons,
     // text:"这是一个页面"
   },

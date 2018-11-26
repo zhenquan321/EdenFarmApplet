@@ -10,7 +10,7 @@ page {
 
 .header{
   width: 100%;
-  height: 400rpx;
+  height: 300rpx;
   background:  #60a411;
   padding-top: 20rpx;
 }
@@ -69,23 +69,24 @@ page {
 
 .action {
   width: 100%;
-  margin-top: 20rpx;
   height: auto; overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  background-color:#fff;
+  padding-bottom:50rpx;
+  margin-top:40rpx;
+
 }
 
 .action .col{
-  width: 100%;
-  height: 80rpx;
-  line-height: 60rpx;
-  margin-top: 20rpx;
-  background: #fff;
-  border-bottom: 1px solid #f3f8fc;
-  border-top: 1px solid #f3f8fc;
+  width: 33%;
+  flex:1;
+  text-align: center;
+  margin-top: 50rpx;
 }
 .action .tubiao{
-  float: left; width: 40rpx; height: 40rpx;
-  margin-left: 20rpx;
-  margin-top: 20rpx;
+  width: 120rpx; 
+  height: 120rpx;
 }
 .action .jiantou{
    float: right; width: 30rpx; height: 30rpx;
@@ -95,12 +96,11 @@ page {
 
 .action .col text{
   height: 40rpx;
-  width: 200rpx;
+  width: 250rpx;
   float: left;
   line-height: 40rpx;
-  margin-left: 20rpx;
-  margin-top: 20rpx;
   color: #666; 
+  text-align: center;
 }
 .qihuan{
   width: 100%;
@@ -125,4 +125,92 @@ page {
    color: #1ba8b9; 
     float: left;
     margin-top: 20rpx;
+}
+
+.jinEnCard{
+  color:#fff;
+  text-align: center;
+
+}
+
+.jinEnCard .JETitle{
+  color:#fff;
+  
+}
+
+.jinEnCard .JENum{
+  color:#fff;
+  font-size: 68rpx;
+  height: 130rpx;
+  line-height: 150rpx
+}
+
+.XMList{
+  color:#fff;
+  display: flex;
+  background-color: rgb(81, 158, 37);
+  background: linear-gradient(#60a411, rgb(78, 145, 43),rgb(71, 138, 33)); /* 标准的语法 */
+  margin-bottom: 20px;
+  height:100rpx;
+  padding: 44rpx 20rpx 10rpx;
+}
+.XMList .xmCard{
+  text-align: center;
+  color:#fff;
+  flex:1;
+  height:80rpx;
+  line-height: 40rpx;
+  border-right:1px solid #ddd; 
+}
+
+.XMList .xmCard:last-child{
+  border-right:0px solid #fff; 
+}
+
+.imgCardIcon{
+  display: inline-block;
+  width: 96rpx;
+  height: 96rpx;
+  border-radius:50%; 
+  background-color: rgb(182, 222, 253);
+  padding: 10rpx;
+  margin-bottom: 13rpx;
+  margin-top: 6rpx;
+}
+
+.action .imgCardIcon .tubiao{
+  width: 84rpx;
+  height: 84rpx;
+}
+
+.imgCardIcon2{
+  display: inline-block;
+  width: 96rpx;
+  height: 96rpx;
+  border-radius:50%; 
+  background-color: rgb(189, 250, 194);
+  padding: 16rpx 10rpx 7rpx;
+  margin-bottom: 11rpx;
+  margin-top: 6rpx;
+}
+
+.action .imgCardIcon2 .tubiao{
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.imgCardIcon3{
+  display: inline-block;
+  width: 96rpx;
+  height: 96rpx;
+  border-radius:50%; 
+  background-color: rgb(250, 201, 201);
+  padding: 13rpx 10rpx 7rpx;
+  margin-bottom: 11rpx;
+  margin-top: 6rpx;
+}
+
+.action .imgCardIcon3 .tubiao{
+  width: 84rpx;
+  height: 84rpx;
 }

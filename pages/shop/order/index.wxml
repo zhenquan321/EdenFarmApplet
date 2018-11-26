@@ -4,27 +4,27 @@
 </navigator>
 <view class="flex-row tab-bar">
   <view class="flex-grow-1">
-    <navigator class="{{status==0?'active':''}}" url="/pages/shop/order/index?status=1" open-type="redirect">
+    <navigator class="{{status==1?'active':''}}" url="/pages/shop/order/index?status=1" open-type="redirect">
       <text>待付款</text>
     </navigator>
   </view>
   <view class="flex-grow-1">
-    <navigator class="{{status==1?'active':''}}" url="/pages/shop/order/index?status=2" open-type="redirect">
+    <navigator class="{{status==2?'active':''}}" url="/pages/shop/order/index?status=2" open-type="redirect">
       <text>待确定</text>
     </navigator>
   </view>
   <view class="flex-grow-1">
-    <navigator class="{{status==2?'active':''}}" url="/pages/shop/order/index?status=3" open-type="redirect">
+    <navigator class="{{status==3?'active':''}}" url="/pages/shop/order/index?status=3" open-type="redirect">
       <text>待发货</text>
     </navigator>
   </view>
   <view class="flex-grow-1">
-    <navigator class="{{status==3?'active':''}}" url="/pages/shop/order/index?status=4" open-type="redirect">
+    <navigator class="{{status==4?'active':''}}" url="/pages/shop/order/index?status=4" open-type="redirect">
       <text>配送中</text>
     </navigator>
   </view>
   <view class="flex-grow-1">
-    <navigator class="{{status==4?'active':''}}" url="/pages/shop/order/index?status=5" open-type="redirect">
+    <navigator class="{{status==5?'active':''}}" url="/pages/shop/order/index?status=5" open-type="redirect">
       <text>已签收</text>
     </navigator>
   </view>
@@ -64,7 +64,7 @@
       </view>
     </navigator>
     <view class="flex-row">
-      <view class="flex-grow-1 flex-y-center">
+      <view class="flex-grow-1 flex-y-center jgCard">
         <block wx:if="{{status==4}}">
           <block wx:if="{{order.refund_type==1}}">
             退货退款：
@@ -74,6 +74,15 @@
             换货
           </block>
         </block>
+        <block wx:elif="{{status==2}}" >
+        合计：￥{{order.goods_amount}}
+          <view class='qrbtn' bindtap='confirm' data-id="{{order.order_id}}">确认订单</view>  
+        </block>
+        <block wx:elif="{{status==3}}" >
+          合计：￥{{order.goods_amount}}
+          <view class='qrbtn' bindtap='DeliverGoods' data-id="{{order.order_id}}">发货</view>  
+        </block>
+        
         <block wx:else>合计：￥{{order.goods_amount}}</block>
       </view>
       <view class="flex-grow-0 flex-y-center flex-row">
