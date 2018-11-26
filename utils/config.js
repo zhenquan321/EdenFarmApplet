@@ -4,7 +4,7 @@
 
 //配置域名,域名只修改此处。
 //如果wordpress没有安装在网站根目录请加上目录路径,例如："www.watch-life.net/blog"
-var DOMAIN = "https://home.ydnc.com.cn";
+var DOMAIN = "https://api.ydnc.com.cn";
 var WEBSITENAME="伊甸农场"; //网站名称
 var ABOUTID = 1136; //wordpress网站"页面"的id,注意这个"页面"是wordpress的"页面"，不是"文章"
 var PAGECOUNT='5'; //每页文章数目

@@ -1,27 +1,2 @@
-
-<view class="app">
-  <!-- <view class="title">
-    <view class='shugang'></view>我的账户
-  </view> -->
-  <view class='yueCard'>
-    <!-- <image bindload="imagesHeight" class="beijingImg" data-type="bannerheight" mode="widthFix" src="{{icons[1]}}"></image> -->
-    <view class='czimg'>
-        <image bindload="imagesHeight" class="advimg" data-type="bannerheight" mode="widthFix" src="{{icons[0]}}"></image>
-    </view>
-    <view class='yeNum'>余额：￥115.52</view>
-  </view>
-
-  <view class="title">
-    <view class='shugang'></view>充值
-  </view>
-  <view class="inputCard">
-    <input class='input inputC' placeholder='请输入充值金额'></input>
-  </view>
-  <view class='button buttonGM'>立即充值</view>
-  <view class="title">
-    <view class='shugang'></view>购买会员卡
-  </view>
-  <view class='huiYuanCardList'>
-    <view class='huiYuanCard'></view>
-  </view>
-</view>
+<!--pages/userCenter/Recharge/Recharge.wxml-->
+<text>pages/userCenter/Recharge/Recharge.wxml</text>
