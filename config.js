@@ -7,7 +7,7 @@ var Config = {
      },
      "baseApiUrl": "https://api.ydnc.com.cn/",
     "web" :  {
-        "url": "home.ydnc.com.cn",
+        "url": "api.ydnc.com.cn",
         "name" : "伊甸农场",
     },
     "appDebug" : false,

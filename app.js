@@ -101,5 +101,6 @@ App({
   },
   globalData: {
     userInfo: null
-  }
+  },
+
 })
