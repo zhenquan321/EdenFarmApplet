@@ -1,3 +1,8 @@
+var app = getApp();
+import config from '../../utils/config.js';
+var baseApiUrl = config.getDomain;
+var wxRequest = app.requirejs('wxRequest');
+
 // pages/shop/manage.js
 Page({
 
@@ -5,13 +10,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    StatisticsData:{},
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.getStatistics();
   
   },
 
@@ -40,7 +46,6 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
   },
 
   /**
@@ -62,5 +67,20 @@ Page({
    */
   onShareAppMessage: function () {
   
-  }
+  },
+    //获取用户信息
+  getStatistics: function (e) {
+    var page = this;
+    let url = baseApiUrl + "/api/Order/statistics";
+    let data = {
+      token: wx.getStorageSync("shoptoken")
+    };
+    var confirm2 = wxRequest.getRequest(url, data);
+    confirm2.then(res => {
+      console.log(res.data.content);
+      this.setData({
+        StatisticsData: res.data.content,
+      })
+    })
+  },
 })

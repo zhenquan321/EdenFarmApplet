@@ -35,7 +35,9 @@ Page({
         username: that.data.username,
         password: that.data.password,
       }
-      var url = baseApiUrl + "/api/admin/login";
+      // var url = baseApiUrl + "/api/admin/login";
+      var url = "https://home.ydnc.com.cn" + "/api/admin/login";
+      
       var login = wxRequest.getRequest(url, data);
       login.then(response=>{
         console.log(response);

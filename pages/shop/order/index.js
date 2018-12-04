@@ -53,7 +53,6 @@ Page({
       else {
         that.getOrder(2);
       }
-      
 },
 
   getOrder:function(status){
@@ -329,6 +328,7 @@ Page({
       }
     });
   },
+
   //发货
   DeliverGoods: function (e) {
     var page = this;
