@@ -25,14 +25,14 @@
     <navigator hover-class="none" class="fui-icon-col" url="../order/index/index?type=1">
       <view class="badge" wx:if="{{member.statics.order_1 > 0}}">{{member.statics.order_1}}</view>
       <view class="icon">
-        <image src="{{icons.daishouhuo}}"></image>
+        <image src="{{icons.daifahuo}}"></image>
       </view>
       <view class="text">待发货</view>
     </navigator>
     <navigator hover-class="none" class="fui-icon-col" url="../order/index/index?type=1">
       <view class="badge" wx:if="{{member.statics.order_2 > 0}}">{{member.statics.order_1}}</view>
       <view class="icon">
-        <image src="{{icons.daipingjia}}"></image>
+        <image src="{{icons.daishouhuo}}"></image>
       </view>
       <view class="text">待收货</view>
     </navigator>
@@ -49,16 +49,28 @@
 <view class="goods-info">
   <navigator url="{{'../userCenter/Recharge/Recharge?balance='+ userInfo.balance}}" class="a" href="addresses.html" hover-class="none">
     <view class="row-box" >
-      <view class="row-label">会员中心</view>
+      <view class="row-label iconUserDiv">
+        <image class='iconUser' src="{{icons.member}}"></image>
+        会员中心
+      </view>
       <view class="right-text" style='color:#666'>伊甸余额：¥ {{userInfo.balance}}</view>
     </view>
   </navigator>
    <navigator url="../addresses/addresses" class="a" href="addresses.html" hover-class="none">
     <view class="row-box">
-      <view class="row-label">地址管理</view>
+      <view class="row-label iconUserDiv">
+        <image class='iconUser' src="{{icons.diziguanli}}"></image>
+        地址管理
+      </view>
       <view class="right-text"> {{balance}}</view>
     </view>
   </navigator>
+   <view class="row-box">
+      <view class="row-label iconUserDiv">
+        <image class='iconUser' style='margin-top:4rpx;' src="{{icons.phoneNum}}"></image>
+        <button class='IphoneDiv' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">授权手机号</button>
+      </view>
+    </view>
 </view>
 
 <!-- <view class="goods-info">
@@ -68,13 +80,7 @@
   </view>
 </view> -->
 
-<view class="goods-info">
-    <view class="row-box">
-    <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">授权手机号</button>
-  </view>
-</view>
-
-<view class="goods-info">
+<view class="goods-info changCard" >
     <view class="row-box">
     <button bindtap="changeShop">切换成商家</button>
   </view>

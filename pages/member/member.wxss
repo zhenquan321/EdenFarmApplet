@@ -9,12 +9,13 @@ page {
 
 .my_head {
     text-align: center;
-    padding-bottom: 50rpx;
-     background-color: #60a411;
+    padding-bottom: 30rpx;
+    background-color: #60a411;
+    margin-bottom:30rpx;
 }
 
 .my_head_pic {
-    padding: 50px 0 0;
+    padding: 60rpx 0 0;
 }
 
 .my_head_info {
@@ -62,12 +63,14 @@ page {
 }
 
 .fui-cell-group {
-  margin-top: 20rpx;
+  margin-top: 40rpx;
   background-color: #fff;
   line-height: 1.4;
   font-size: 32rpx;
   overflow: hidden;
   position: relative;
+  margin:10px;
+  border-radius:10px;
 }
 
 .fui-cell-group.fui-cell-group-o {
@@ -382,8 +385,8 @@ page {
 }
 
 .fui-icon-group .fui-icon-col .icon image {
-  height: 56rpx;
-  width: 56rpx;
+  height: 70rpx;
+  width: 70rpx;
 }
 
 .fui-icon-group.radius .fui-icon-col image {
@@ -451,13 +454,16 @@ page {
     background-color: #fff;
     margin-top: 20rpx;
     padding-bottom: 24rpx;
+    padding-top:8px;
+    margin:10px;
+    border-radius:10px;
 }
 .goods-info .row-box{
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
-    padding: 36rpx 30rpx 12rpx 30rpx;
+    padding: 20rpx 30rpx 10rpx 30rpx;
     font-size: 28rpx;
     color: #000;
 }
@@ -471,4 +477,29 @@ page {
   line-height: 1;
 
 }
+.iconUserDiv{
+  height:46rpx;
+  line-height:46rpx;
+}
+.iconUser{
+  width:46rpx;
+  height:46rpx;
+  float:left;
+  margin-right: 20rpx;
+}
+.IphoneDiv{
+  line-height:28px!important;
+  color:#333;
+  padding-left:0;
+}
 
+.changCard{
+  background-color: #75a53b;
+  margin-top: 40rpx;
+}
+
+.changCard button{
+  background-color:#75a53b;
+  line-height:1;
+  color:#fff;
+}
