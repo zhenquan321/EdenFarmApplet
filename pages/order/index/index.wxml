@@ -70,7 +70,7 @@
                             </navigator>
                             <view class="div order_ft">
                                 <view class="div order_total">
-                                    <view class="span order_total_info">共{{order.order_quantity}}件商品 运费{{order.express_fee}}</view>
+                                    <view class="span order_total_info">共{{order.order_quantity}}件商品 运费￥{{order.express_fee}}</view>
                                     <view class="span order_price">实付：
                                         <view class="b"><view class="small">￥</view>{{order.pay_amount}}</view>
                                     </view>
@@ -113,16 +113,17 @@
                                     <view class="div " wx:if = "order.pay_status == 2 && order.order_status == 1">
                                         <!--<view class="span order_status" wx:if = "order.lucky_status == '3' || order.lucky_status == '0' ">{{order.order_status_lang}}</view>-->
                                     </view>
-                                    <view class="div" wx:if = "order.pay_status != 2 || order.order_status != 1">
+                                    <view class="div orderStatus" wx:if = "order.pay_status != 2 || order.order_status != 1">
                                         <view class="span order_status">{{order.order_status_lang}}</view>
                                     </view>
                                     <view class="div order_btn" hidden="{{!(order.order_status==0)}}">
-                                        <view class="a order_btn_buy" wx:click="orderBuy(order)" bindtap="orderBuy" data-order_id="{{order.order_id}}">去支付</view>
+                                      <view class="a" data-order_id="{{order.order_id}}" bindtap="orderCancel">取消订单</view>
+                                        <view class="a order_btn_buy order_btn_receive" wx:click="orderBuy(order)" bindtap="orderBuy" data-order_id="{{order.order_id}}">去支付</view>
                                         <!--<input  class="input" ms-attr-value="{{order.order_id}}" name="order_id" type="hidden"/>-->
-                                        <view class="a" data-order_id="{{order.order_id}}" bindtap="orderCancel">取消订单</view>
+                                      
                                     </view>
                                     <view class="div order_btn" hidden="{{!(order.order_status==10 || order.order_status==3)}}">
-                                        <view class="a order_btn_receive" hidden="{{!(order.order_status==10 || order.order_status==3)}}" data-order_id="{{order.order_id}}" bindtap ="expressShow">查看物流</view>
+                                        <view class="a " hidden="{{!(order.order_status==10 || order.order_status==3)}}" data-order_id="{{order.order_id}}" bindtap ="expressShow">查看物流</view>
                                         <view class="a order_btn_receive" hidden="{{!(order.order_status==3)}}" data-order_id="{{order.order_id}}" bindtap ="orderReceive" ms-click="(order.order_id)">确认收货</view>
                                     </view>
                                 </view>
