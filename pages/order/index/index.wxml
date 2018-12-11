@@ -2,7 +2,6 @@
     <view class="div" ms-controller="root">
             <view class="div all_page" ms-if="confirm_code"></view>
             <!-- <view ms-include-src="'share_coupon.html'" ms-if="confirm_code"></view> -->
-          
             <view class="div nav_fixed">
             <!--data-status="1" href="#" ms-class="nav_cur: all_status==3" ms-click=statusChange(3)-->
                 <view class="a fixed_nav_item {{all_status == 3 || all_status == undefined ? 'nav_cur' : ''}}" data-all_status="3" bindtap="statusChange">
@@ -27,7 +26,6 @@
                     </view>
                 </view>
             </view>
-            
             <scroll-view  style="height: {{windowHeight}}px; width: {{windowWidth}}px;" scroll-y="true" bindscrolltoupper="pullUpLoad" bindscrolltolower="pullDown">
             <!--&& shippingBanner.open == '1'-->
             <view class="div" id="dealliststatus1" ms-class="scroll_coup:confirm_code">
@@ -48,14 +46,16 @@
                                             <image class="img" alt="" src="{{item.image_url}}"></image>
                                         </navigator>
                                     </view>
-
                                     <view class="div order_goods_info">
                                         <view class="div order_goods_name">{{item.goods_name}}</view>
                                         <view class="div order_goods_attr">
                                             <view class="div order_goods_attr_item">
                                                 <view class="div order_goods_price">
-                                                  <block wx:if="{{item.mc_id}}"><view class="i">{{item.card_name}}￥</view>{{item.card_price}}</block>
-                                                  <block wx:else><view class="i">￥</view>{{item.goods_price}}</block>
+                                                  <block wx:if="{{item.mc_id}}">
+                                                  <view class="i">{{item.card_name}}￥</view>
+                                                  {{item.card_price}}</block>
+                                                  <block wx:else><view class="i">￥</view>
+                                                  {{item.goods_price}}</block>
                                                     <view class="i">/件</view>
                                                 </view>数量：{{item.quantity}}
                                             </view>
@@ -150,18 +150,15 @@
 
             </scroll-view>        
 
-            
-
-            <view onclick="common.showService()" class="i service explain_icon_right" style="display;">
+            <!-- <view onclick="common.showService()" class="i service explain_icon_right" style="display;">
                 <contact-button 
                     type="default-light" 
                      size="27" >
                  </contact-button>  
-            </view>
-            
-        </view>
-        <view style="div height:58px;visibility:hidden "></view>
-
+            </view> -->
+        
+      </view>
+    <view style="div height:58px;visibility:hidden "></view>
 <import src="../../common/modal.wxml"/>
 <template is="modal" data="{{title : '',content : titleModel,hidden : modalHidden,bindconfirm : modalConfirm,bindcancel : bindcancel,success : callback}}" />
 </view>

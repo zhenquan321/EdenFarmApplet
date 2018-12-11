@@ -66,14 +66,14 @@
 }
 
 .order {
-    font-size: 12px;
-    margin-top: 0px;
+    font-size: 24rpx;
+    margin:20rpx;
+    border-radius:20rpx; 
+    padding-bottom:8rpx;
+
 }
 
 .order_hd {
-    background-color: #fafafb;
-    border-bottom: 1px solid #d5d5d5;
-    border-top: 1px solid #e4e4e4;
     height: 39px;
     line-height: 39px;
     overflow: hidden;
@@ -86,7 +86,6 @@
 
 .order_bd {
     background-color: #fff;
-    border-bottom: 1px solid #dedede;
     padding: 0 10px;
 }
 
