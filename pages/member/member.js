@@ -44,7 +44,7 @@ Page({
               "userInfo": {
                 "avatarUrl": data.user_info.headimgurl,
                 "nickName": data.user_info.nickname,
-                'balance': data.user_info.balance,
+                'balance': data.user_info.balance.toFixed(2),
                 'vipdays': data.user_info.vipdays
               }
             });
